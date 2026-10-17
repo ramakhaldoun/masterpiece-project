@@ -1,0 +1,1019 @@
+/* =====================================================
+   BASE CSS - shared by EVERY page (landing page included)
+
+   Order of this file:
+   1. Colors          5. Cards
+   2. General         6. Story cards (with photos)
+   3. Buttons         7. Forms
+   4. Navbar          8. Footer
+                      9. Sidebar (inner pages) + small screens
+
+   Each page also has its own CSS file (landing.css, home.css...)
+   for the things that only that page uses.
+   ===================================================== */
+
+
+/* ---------- 1. COLORS ----------
+   Each color is written once here, then reused with var(--name).
+   To change the theme of the whole website, change only these lines. */
+:root {
+  --purple: #85569A;
+  --purple-dark: #6E4382;
+  --lilac: #F1E4F7;          /* very light purple */
+  --lilac-soft: #F7F2FA;     /* even lighter purple */
+  --soft-blue: #D9DEFA;
+  --text-dark: #2B2237;
+  --text-gray: #6B5F7A;
+  --border: #E6DBEE;
+  --green: #2A9D8F;
+  --pink: #D9667A;
+  --gold: #C9923A;
+  --shadow: 0 10px 30px rgba(110, 67, 130, 0.1);
+  --shadow-big: 0 22px 40px rgba(110, 67, 130, 0.2);
+}
+
+
+/* ---------- 2. GENERAL ---------- */
+
+/* Remove the default space browsers add around everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;    /* padding is counted inside the width */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', 'Cairo', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* soft purple to blue; "fixed" keeps the gradient still while scrolling */
+  background: linear-gradient(180deg, #EADFF6, #DCE5FA) fixed;
+}
+
+a {
+  color: inherit;
+}
+
+/* JavaScript adds or removes this class to hide or show things.
+   !important makes sure it always wins over other display rules. */
+.hidden {
+  display: none !important;
+}
+
+/* The content area of the inner pages (home, activities, ...) */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+}
+
+/* Centered title block: small label + big title + short text */
+.section-title {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.section-title h1,
+.section-title h2 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 6px 0 12px;
+}
+
+.section-title p {
+  color: var(--text-gray);
+}
+
+.small-label {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Little rounded label, e.g. "For women facing cancer..." */
+.badge {
+  display: inline-block;
+  background-color: var(--lilac);
+  color: var(--purple-dark);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+
+.arabic-text {
+  font-family: 'Cairo', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-top: 10px;
+}
+
+/* Grid of cards that fits as many columns as it can (each at least 290px wide) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+/* Text shown while data is loading (or when it fails) */
+.loading {
+  grid-column: 1 / -1;       /* takes the full width of a grid */
+  text-align: center;
+  color: var(--text-gray);
+  padding: 40px;
+}
+
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;     /* so <a class="btn"> looks like a button too */
+  padding: 13px 24px;
+  border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* A little space between an icon and the button text */
+.btn i {
+  margin-inline-end: 6px;    /* inline-end = right in English, left in Arabic */
+}
+
+/* Buttons rise a little when the mouse is over them */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(110, 67, 130, 0.25);
+}
+
+.btn-purple {
+  background-color: var(--purple);
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: var(--purple-dark);
+}
+
+.btn-soft {
+  background-color: var(--soft-blue);
+  color: var(--text-dark);
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--purple-dark);
+}
+
+/* Size helpers: add one of these next to a color class */
+.btn-big {
+  padding: 16px 32px;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* A button that looks like a purple link */
+.text-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------- 4. NAVBAR ---------- */
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;          /* stays at the top while scrolling */
+  top: 0;
+  z-index: 100;              /* stays above everything else */
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;                    /* logo, links and buttons in one row */
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 52px;
+  height: 52px;
+  background-color: var(--lilac);
+  color: var(--purple);
+  font-size: 24px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The logo picture: hands holding a flower (images/logo.svg) */
+.brand-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;    /* name above the tagline */
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.brand-tagline {
+  font-size: 14px;
+  color: #4A4256;
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {        /* the page (or section) you are on */
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Round profile picture (sidebar + profile page).
+   It is an <img> when she has a photo, or a <div> with her first letter. */
+.avatar {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;            /* never gets squeezed */
+  border-radius: 50%;
+  object-fit: cover;         /* the photo fills the circle without stretching */
+  background: linear-gradient(135deg, var(--purple), #B084C4);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-big {
+  width: 96px;
+  height: 96px;
+  font-size: 36px;
+}
+
+/* Gray text button, e.g. "Log out" */
+.text-button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.text-button:hover {
+  color: var(--purple);
+}
+
+/* Links that look like buttons or cards: no underline */
+a.text-link,
+a.text-button,
+a.nour-card,
+a.photo-story-card,
+a.community-slide,
+a.more-button {
+  text-decoration: none;
+}
+
+a.text-link {
+  display: inline-block;
+}
+
+
+/* ---------- 5. CARDS ---------- */
+.card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Cards lift up a little when the mouse is over them */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-big);
+}
+
+.card h3 {
+  font-size: 19px;
+  margin: 16px 0 8px;
+}
+
+.card p {
+  color: var(--text-gray);
+  font-size: 15px;
+}
+
+/* The colored square with an icon at the top of a card */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+/* Color versions of the icon square */
+.card-icon.purple { background-color: var(--lilac); color: var(--purple); }
+.card-icon.green  { background-color: #DDF5EE;      color: var(--green); }
+.card-icon.pink   { background-color: #FDE6EA;      color: var(--pink); }
+.card-icon.gold   { background-color: #FBF0DC;      color: var(--gold); }
+.card-icon.peach  { background-color: #FDEDE3;      color: #B5654A; }
+.card-icon.blue   { background-color: #E3E7FC;      color: #5A68C9; }
+
+/* Small gray line under a card text, e.g. "1240 members" */
+.card-meta {
+  font-size: 14px;
+  margin: 14px 0;
+}
+
+/* Purple link at the bottom of a card, e.g. "Explore library →" */
+.card-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--purple);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* The centered card on pages that are not ready yet */
+.coming-soon {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coming-soon .card-icon {
+  margin: 0 auto;
+}
+
+
+/* ---------- 6. STORY CARDS WITH PHOTOS (landing page + stories page) ----------
+   A photo, the small word "READ", the title and who wrote it.
+   On the stories page the card is a link <a>, on the landing page a <button>. */
+.photo-story-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: none;              /* (for the <button> version) */
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;          /* the photo follows the round corners */
+  box-shadow: var(--shadow);
+  font-family: inherit;
+  color: var(--text-dark);
+  text-align: start;         /* start = left in English, right in Arabic */
+  text-decoration: none;     /* (for the <a> version) */
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.photo-story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-big);
+}
+
+/* The big photo on top */
+.photo-story-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;         /* fills the box without stretching */
+}
+
+.photo-story-body {
+  padding: 32px 36px 36px;
+}
+
+/* The small "READ" word */
+.read-label {
+  color: var(--purple-dark);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.photo-story-body h3 {
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 8px 0 10px;
+}
+
+.photo-story-card:hover h3 {
+  color: var(--purple);
+}
+
+.photo-story-author {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+
+/* "Read more stories →" button (stories page + landing page) */
+.more-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border: 2px solid var(--purple);
+  border-radius: 30px;
+  background-color: white;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--purple);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.more-button:hover {
+  background-color: var(--purple);
+  color: white;
+}
+
+/* the arrow slides a little to the right on hover */
+.more-button i {
+  transition: transform 0.2s ease;
+}
+
+.more-button:hover i {
+  transform: translateX(4px);
+}
+
+
+/* ---------- 7. FORMS ---------- */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 14px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: var(--lilac-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+}
+
+textarea {
+  resize: vertical;          /* can only be made taller, not wider */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--purple);   /* purple border while typing */
+  background-color: white;
+}
+
+/* JavaScript adds this class to a field with a mistake */
+input.input-error {
+  border-color: #C0392B;
+}
+
+.error-text {
+  color: #B3321F;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+
+/* ---------- 8. FOOTER ---------- */
+.footer {
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 14px;
+  padding: 24px 16px;
+}
+
+
+/* ---------- 9. SIDEBAR (inner pages only) ----------
+   The sidebar is fixed on the left. Pages with <body class="app">
+   get space on the left so the content is not hidden behind it. */
+.app {
+  padding-left: 270px;       /* same as the sidebar width */
+}
+
+.sidebar {
+  position: fixed;           /* stays in place while the page scrolls */
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  overflow-y: auto;          /* the sidebar scrolls if the screen is short */
+  scrollbar-width: none;     /* ...but without showing a scrollbar (Firefox) */
+  background-color: white;
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  z-index: 100;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;             /* no scrollbar (Chrome, Edge, Safari) */
+}
+
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .brand-name {
+  font-size: 24px;
+}
+
+/* The menu button is only shown on small screens (see below) */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+/* Small gray title above each group of links */
+.sidebar-heading {
+  margin: 22px 12px 6px;
+  color: var(--text-gray);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--text-dark);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.sidebar-link i {
+  width: 20px;               /* all icons take the same space, so texts line up */
+  text-align: center;
+  color: var(--text-gray);
+}
+
+.sidebar-link:hover {
+  background-color: var(--lilac-soft);
+  color: var(--purple);
+}
+
+/* The page you are on */
+.sidebar-link.active {
+  background-color: var(--lilac);
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.sidebar-link.active i {
+  color: var(--purple);
+}
+
+.sidebar-donate {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Her profile at the top: picture + name + "View my profile" */
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 16px;
+  background-color: var(--lilac-soft);
+  text-decoration: none;
+}
+
+.sidebar-profile:hover {
+  background-color: var(--lilac);
+}
+
+.sidebar-profile strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.sidebar-profile small {
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* "Log out" at the bottom */
+.sidebar-logout {
+  display: block;
+  margin-top: 16px;
+  padding: 10px 12px;
+}
+
+.sidebar-logout i {
+  margin-inline-end: 8px;     /* inline-end = right in English, left in Arabic */
+}
+
+
+/* The language button in the sidebar (only on pages that have Arabic) */
+.sidebar-lang {
+  display: block;
+  margin-top: 8px;
+  padding: 10px 12px;
+}
+
+.sidebar-lang i {
+  margin-inline-end: 8px;
+}
+
+
+/* ---------- 10. PAGE BANNER + DETAILS POPUP ----------
+   Used by the Communities and Activities pages:
+   - .page-hero      a wide photo with a card overlapping it
+   - .details-popup  the popup that opens when you click a card
+   Each page sets its own banner photo in its CSS file (.page-hero-photo). */
+
+/* Pages that touch the screen edges (100vw) would scroll sideways a little,
+   because 100vw also counts the scrollbar. This hides that sideways scroll. */
+body.app {
+  overflow-x: hidden;
+}
+
+/* The banner fills the whole width next to the sidebar:
+   --free-width = the screen width minus the sidebar (270px) */
+.page-hero {
+  --free-width: calc(100vw - 270px);
+  width: var(--free-width);
+  margin-inline-start: calc(50% - var(--free-width) / 2);   /* slide to the start side until it touches the sidebar */
+  margin-top: -48px;         /* cancels the space .page leaves at the top */
+  margin-bottom: 48px;
+}
+
+/* The wide photo at the top (the photo itself is set in each page's CSS) */
+.page-hero-photo {
+  height: 340px;
+  background-size: cover;    /* fills the box without stretching */
+  background-position: center;
+}
+
+/* The light frame: pulled up so it overlaps the bottom of the photo */
+.page-hero-frame {
+  position: relative;        /* so it sits above the photo */
+  width: calc(100% - 48px);
+  max-width: 1100px;
+  margin: -220px auto 0;     /* negative margin = moves it up over the photo */
+  padding: 24px;
+  background-color: #F7F5FC;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* The purple card with the title */
+.page-hero-card {
+  background-color: #5E4A78;
+  color: white;
+  border-radius: 12px;
+  padding: 44px 56px 52px;
+}
+
+/* "Home > Communities" with a white line under it */
+.breadcrumb {
+  font-size: 17px;
+  padding-bottom: 14px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.breadcrumb a {
+  color: white;
+}
+
+.page-hero-card h1 {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.page-hero-text {
+  max-width: 780px;
+  font-size: 17px;
+  line-height: 1.75;
+  opacity: 0.92;             /* slightly softer than the title */
+}
+
+/* The popup (<dialog>) */
+.details-popup {
+  width: 92%;
+  max-width: 720px;
+  max-height: 90vh;
+  margin: auto;              /* centers the popup */
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  color: var(--text-dark);
+}
+
+/* ::backdrop is the dark layer behind a <dialog> */
+.details-popup::backdrop {
+  background-color: rgba(43, 34, 55, 0.6);
+}
+
+.popup-photo {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Round ✕ button in the top-right corner */
+.popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;                /* above the photos */
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.popup-body {
+  padding: 28px 36px 32px;
+}
+
+.popup-body h2 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+/* The 3 small boxes: when / where / members */
+.popup-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.popup-detail {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background-color: var(--lilac-soft);
+}
+
+.popup-detail i {
+  color: var(--purple);
+  margin-top: 4px;
+}
+
+.popup-detail small {
+  display: block;
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+.popup-detail strong {
+  font-size: 14px;
+}
+
+.popup-about {
+  line-height: 1.75;
+  color: #3A3345;
+}
+
+.popup-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  /* the sidebar is a bar at the top now: use the full screen width */
+  .page-hero { --free-width: 100vw; }
+  .page-hero-photo { height: 260px; }
+  .page-hero-frame { margin-top: -150px; padding: 14px; width: calc(100% - 32px); }
+  .page-hero-card { padding: 28px 24px 32px; }
+  .page-hero-card h1 { font-size: 32px; }
+  .page-hero-text { font-size: 16px; }
+  .popup-details { grid-template-columns: 1fr; }   /* the 3 boxes under each other */
+}
+
+@media (max-width: 520px) {
+  .popup-body { padding: 22px 20px 24px; }
+  .popup-photo { height: 200px; }
+}
+
+
+/* ---------- 11. DISPLAY SETTINGS (from the Settings page) ----------
+   layout.js adds these classes to <html> when she turns them on. */
+
+/* Larger text: the page content is shown a little bigger */
+html.larger-text .page {
+  zoom: 1.12;
+}
+
+/* Calm mode: no movement at all (no sliding, lifting or animations) */
+html.calm-mode *,
+html.calm-mode *::before,
+html.calm-mode *::after {
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+}
+
+html.calm-mode *:hover {
+  transform: none !important;
+}
+
+
+/* ---------- 12. ARABIC (right to left) ----------
+   lang.js puts dir="rtl" on the page when Arabic is chosen.
+   Most of the layout flips by itself; these are the few extra changes. */
+
+/* Cairo first, so all Arabic text uses the same nice font */
+[dir="rtl"] body {
+  font-family: 'Cairo', 'Nunito', sans-serif;
+}
+
+/* The sidebar moves to the RIGHT side of the screen */
+[dir="rtl"] .app {
+  padding-left: 0;
+  padding-right: 270px;
+}
+
+[dir="rtl"] .sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
+/* Arrows point the other way (scaleX(-1) = mirror the icon) */
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-chevron-left,
+[dir="rtl"] .fa-arrow-right-from-bracket {
+  transform: scaleX(-1);
+}
+
+/* Photo galleries (Activities, Daily needs): "previous" is on the right in Arabic */
+[dir="rtl"] .gallery-prev { left: auto; right: 14px; }
+[dir="rtl"] .gallery-next { right: auto; left: 14px; }
+
+/* Space between letters breaks the joined Arabic letters */
+[dir="rtl"] .sidebar-heading,
+[dir="rtl"] .small-label {
+  letter-spacing: 0;
+}
+
+
+/* ---------- SMALL SCREENS ---------- */
+
+/* Tablets and phones: the sidebar becomes a bar at the top.
+   The links are hidden until the menu button is clicked. */
+@media (max-width: 900px) {
+  .app,
+  [dir="rtl"] .app {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sidebar {
+    position: sticky;        /* stays at the top while scrolling */
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+  .menu-button {
+    display: block;
+  }
+  .sidebar-content {
+    display: none;
+  }
+  /* clicking the menu button (or a link inside) shows the links */
+  .sidebar:focus-within .sidebar-content {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-name { font-size: 22px; }
+  .section-title h1,
+  .section-title h2 { font-size: 30px; }
+}
+
+/* People who prefer less motion: nothing moves */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

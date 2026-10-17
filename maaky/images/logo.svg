@@ -1,0 +1,23 @@
+<!-- Ma'aky logo: a hand holding a flower.
+     The hand is the "hand-holding" icon from Font Awesome Free 6.4.0 by @fontawesome
+     (https://fontawesome.com, License: CC BY 4.0). The flower sits where the heart was. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+  <g fill="#85569A">
+    <!-- the flower: 5 petals around a center -->
+    <circle cx="288" cy="54" r="50" />
+    <circle cx="343.2" cy="94.1" r="50" />
+    <circle cx="322.1" cy="159" r="50" />
+    <circle cx="253.9" cy="159" r="50" />
+    <circle cx="232.8" cy="94.1" r="50" />
+
+    <!-- the stem and a leaf -->
+    <rect x="277" y="170" width="22" height="140" rx="11" />
+    <path d="M288 292 C 296 254 330 230 376 228 C 368 270 334 292 288 292 Z" />
+
+    <!-- the hand (Font Awesome "hand-holding") -->
+    <path d="M559.7 392.2c17.8-13.1 21.6-38.1 8.5-55.9s-38.1-21.6-55.9-8.5L392.6 416H272c-8.8 0-16-7.2-16-16s7.2-16 16-16h16 64c17.7 0 32-14.3 32-32s-14.3-32-32-32H288 272 193.7c-29.1 0-57.3 9.9-80 28L68.8 384H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H192 352.5c29 0 57.3-9.3 80.7-26.5l126.6-93.3z" />
+  </g>
+
+  <!-- the light center of the flower -->
+  <circle cx="288" cy="114" r="28" fill="#F1E4F7" />
+</svg>

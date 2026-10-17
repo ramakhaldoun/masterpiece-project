@@ -1,0 +1,57 @@
+/* DONATE PAGE CSS (shared styles are in base.css) */
+
+.donate-box {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* No hover lift here: this card holds a form */
+.donate-box:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+/* 4 quick amount buttons in a row */
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.amount {
+  border: 2px solid var(--border);
+  background-color: white;
+  border-radius: 14px;
+  padding: 12px;
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* donate.js adds "active" to the clicked amount */
+.amount.active {
+  border-color: var(--purple);
+  background-color: var(--lilac);
+  color: var(--purple);
+}
+
+.donate-box .btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.success {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.success-icon {
+  margin: 0 auto;
+}
+
+.success h3 {
+  font-size: 24px;
+  margin-top: 12px;
+}

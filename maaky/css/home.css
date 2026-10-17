@@ -1,0 +1,713 @@
+/* =====================================================
+   HOME PAGE CSS
+   Colors, navbar, buttons, cards and titles come from base.css,
+   so the home page looks like the landing page.
+   This file only has home-page parts, in the same order as the HTML:
+   1. Welcome card (+ mood check-in)
+   2. Your check-in   3. Breathing popup
+   ===================================================== */
+
+/* Space between the big sections of the page */
+.home-section {
+  margin-top: 72px;
+}
+
+/* ---------- 1. WELCOME CARD (like the landing page hero) ---------- */
+
+/* The welcome section fills the whole screen next to the sidebar, top to bottom.
+   .page is centered and has a max width, so we "break out" of it:
+   --free-width                    = the screen width minus the sidebar (270px)
+   - width: var(--free-width)      -> as wide as the space next to the sidebar
+   - margin-inline-start: calc(...) -> moves it to the start side until it touches the sidebar
+   - margin-top: -48px             -> cancels the space .page leaves at the top
+   - min-height: 100vh             -> as tall as the screen (vh = % of screen height) */
+.welcome-area {
+  --free-width: calc(100vw - 270px);
+  width: var(--free-width);
+  margin-inline-start: calc(50% - var(--free-width) / 2);   /* inline-start = left in English, right in Arabic */
+  margin-top: -48px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* (the small sideways scroll that 100vw causes is hidden in base.css: body.app) */
+
+/* The white welcome section: fills the whole box, content in the middle */
+.welcome {
+  flex: 1;                   /* grow to fill the whole screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* content in the middle, up/down */
+  background-color: white;
+  /* clamp() = less space on short screens */
+  padding: clamp(32px, 6vh, 64px) 48px clamp(24px, 5vh, 56px);
+}
+
+/* The 3 boxes don't stretch too wide on very big screens */
+.welcome-tiles {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Two columns: welcome message on the left, mood check-in on the right */
+.welcome-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;       /* both columns in the middle, up/down */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* LEFT (right in Arabic): the welcome message */
+.welcome-top {
+  text-align: start;          /* start = left in English, right in Arabic */
+}
+
+.welcome-top .arabic-text {
+  font-size: 18px;
+}
+
+/* RIGHT: the mood check-in, in a soft purple box */
+.mood-panel {
+  background-color: var(--lilac-soft);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.mood-panel h2 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 4px 0 16px;
+}
+
+/* Smaller mood buttons: 3 in a row */
+.mood-panel .mood-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mood-panel .mood-button {
+  padding: 12px 6px 10px;
+  box-shadow: none;
+}
+
+.mood-panel .mood-button .mood-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+}
+
+.mood-panel .mood-icon .material-symbols-rounded {
+  font-size: 22px;
+}
+
+.mood-panel .mood-name {
+  font-size: 14px;
+}
+
+/* Smaller Nour box */
+.mood-panel .nour-box {
+  padding: 14px;
+  gap: 12px;
+  box-shadow: none;
+}
+
+.mood-panel .nour-avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.mood-panel .nour-text {
+  min-width: 160px;
+  font-size: 14px;
+}
+
+/* ---------- SEARCH BAR (top of the welcome card) ---------- */
+.search {
+  position: relative; /* so the results box can be placed right under it */
+  width: 100%;        /* needed inside the flex card, or it would shrink */
+  max-width: 620px;
+  margin: 0 auto clamp(16px, 3.5vh, 32px);   /* less space on short screens */
+}
+
+/* The magnifying glass, inside the input at the start (left in English, right in Arabic) */
+.search > i {
+  position: absolute;
+  inset-inline-start: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+}
+
+.search input {
+  width: 100%;
+  padding-block: 14px;
+  padding-inline: 48px 18px;   /* 48px at the start = room for the icon */
+  font-family: inherit;
+  font-size: 15px;
+  background-color: var(--lilac-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 30px;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: var(--purple);
+  background-color: white;
+}
+
+/* The white box with the results */
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px); /* 8px under the input */
+  left: 0;
+  right: 0;
+  max-height: 360px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: var(--shadow-big);
+  text-align: start;
+  z-index: 10; /* above the rest of the card */
+}
+
+/* One result: icon on the left, title and details on the right */
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.search-result:hover {
+  background-color: var(--lilac-soft);
+}
+
+.search-result .card-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 15px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.search-result strong {
+  display: block;
+  font-size: 15px;
+}
+
+.search-result small {
+  color: var(--text-gray);
+  font-size: 13px;
+}
+
+.search-empty {
+  padding: 14px;
+  color: var(--text-gray);
+  font-size: 14px;
+  text-align: center;
+}
+
+.welcome h1 {
+  font-size: clamp(28px, 5vh, 42px);     /* follows the screen height, between 28px and 42px */
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.welcome-text {
+  max-width: 560px;
+  margin: 12px 0 0;          /* left-aligned (no auto) */
+  color: var(--text-gray);
+}
+
+.welcome-buttons {
+  display: flex;
+  justify-content: flex-start;   /* buttons on the left */
+  flex-wrap: wrap; /* buttons go under each other if there is no room */
+  gap: 16px;
+  margin-top: clamp(16px, 3vh, 28px);
+}
+
+/* 3 info boxes in a row, under a thin line */
+.welcome-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: clamp(20px, 4.5vh, 40px);
+  padding-top: clamp(16px, 3.5vh, 32px);
+  border-top: 1px solid var(--border);
+}
+
+.welcome-tile {
+  display: flex; /* icon on the left, text on the right */
+  gap: 14px;
+  padding: 18px;
+  border-radius: 20px;
+  background-color: var(--lilac-soft);
+}
+
+.welcome-tile .card-icon {
+  flex-shrink: 0; /* the icon never gets squeezed */
+}
+
+.welcome-tile h3 {
+  font-size: 15px;
+}
+
+.welcome-tile p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* ---------- 2. MOOD CHECK-IN ---------- */
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mood-button {
+  display: flex;
+  flex-direction: column; /* icon above the words */
+  align-items: center;
+  gap: 4px;
+  padding: 20px 8px 16px;
+  border: 1.5px solid transparent;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  font-family: inherit;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.mood-button:hover {
+  transform: translateY(-4px);
+}
+
+.mood-button .mood-icon {
+  margin-bottom: 10px;
+}
+
+/* The name of the feeling, under the icon */
+.mood-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* home.js adds the class "selected" to the clicked mood:
+   soft pink card + dark plum circle with a white icon */
+.mood-button.selected {
+  background-color: #FDE0E4;
+  border-color: #F6C9D1;
+}
+
+.mood-button.selected .mood-icon {
+  background-color: #6B4555;
+  color: white;
+}
+
+.mood-button.selected .mood-name {
+  font-weight: 700;
+}
+
+/* ---------- ADD MORE: note + body check-in ---------- */
+.checkin-more {
+  margin-top: 20px;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.checkin-more h3 {
+  font-size: 18px;
+}
+
+.optional {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.checkin-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0 8px;
+}
+
+/* One row: "Energy   Very low (1)(2)(3)(4)(5) Full" */
+.body-question {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px; /* 8px between lines, 24px between label and numbers */
+  padding: 10px 0;
+  border-bottom: 1px solid var(--lilac-soft);
+}
+
+.body-label {
+  font-weight: 600;
+  min-width: 90px;
+}
+
+.scale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scale small {
+  width: 64px;
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+.scale small:last-child {
+  text-align: end;
+}
+
+/* The 5 round number buttons */
+.scale-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background-color: white;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.scale-dot:hover {
+  border-color: var(--purple);
+}
+
+/* home.js adds "selected" to the chosen number */
+.scale-dot.selected {
+  background-color: var(--purple);
+  border-color: var(--purple);
+  color: white;
+}
+
+.checkin-save {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.saved-text {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* ---------- COMMUNITY PULSE ---------- */
+.community-pulse {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--lilac), #e3e7fc);
+}
+
+.community-pulse .card-icon {
+  background-color: white;
+  flex-shrink: 0;
+}
+
+.pulse-text h3 {
+  font-size: 18px;
+}
+
+.pulse-text p {
+  color: var(--text-dark);
+  margin-top: 2px;
+}
+
+.pulse-text small {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+/* The top feelings as small white chips: "😴 Tired 34%" */
+.pulse-moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pulse-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pulse-chip .material-symbols-rounded {
+  font-size: 18px;
+  color: var(--purple);
+}
+
+.pulse-chip .percent {
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* ---------- YOUR WEEK OF FEELINGS ---------- */
+.mood-week {
+  margin-top: 20px;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.mood-week-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mood-week-head h3 {
+  font-size: 18px;
+}
+
+.mood-week-head p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* 7 days in a row */
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column; /* icon above the day name */
+  align-items: center;
+  gap: 8px;
+  padding: 12px 4px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.week-day .mood-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.week-day .mood-icon .material-symbols-rounded {
+  font-size: 22px;
+}
+
+.week-day strong {
+  font-size: 13px;
+}
+
+.week-day small {
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+/* Today gets a soft purple background */
+.week-day.today {
+  background-color: var(--lilac-soft);
+}
+
+.nour-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.nour-avatar {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--purple);
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nour-text {
+  flex: 1; /* takes all the free space in the middle */
+  min-width: 200px;
+}
+
+.nour-help {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.nour-help a {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+/* The centered "See your whole journey" link */
+.see-all {
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ---------- 3. BREATHING POPUP ---------- */
+.breathe {
+  width: 90%;
+  max-width: 400px;
+  margin: auto; /* centers the popup */
+  padding: 32px;
+  border: none;
+  border-radius: 28px;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+/* ::backdrop is the dark layer behind a <dialog> */
+.breathe::backdrop {
+  background-color: rgba(43, 34, 55, 0.6);
+}
+
+.breathe h2 {
+  font-size: 22px;
+}
+
+.breathe-text {
+  color: var(--text-gray);
+  margin-top: 6px;
+}
+
+.breathe-area {
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The circle is small... */
+.breathe-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lilac), var(--soft-blue));
+  transform: scale(0.6);
+  transition: transform 5s ease-in-out; /* grows/shrinks slowly over 5 seconds (same as home.js) */
+}
+
+/* ...and grows when home.js adds the class "big" */
+.breathe-circle.big {
+  transform: scale(1);
+}
+
+.breathe-word {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 18px;
+}
+
+/* ---------- SMALL SCREENS ---------- */
+@media (max-width: 900px) {
+  /* the sidebar is a bar at the top now, so the section uses the full screen width */
+  .welcome-area {
+    --free-width: 100vw;
+    min-height: auto;        /* the content is taller than the screen anyway */
+  }
+  .welcome-columns {
+    grid-template-columns: 1fr;   /* welcome message on top, mood panel under it */
+    gap: 28px;
+  }
+  .welcome {
+    padding: 32px 24px;
+  }
+  .welcome h1 {
+    font-size: 32px;
+  }
+  .welcome-tiles {
+    grid-template-columns: 1fr;
+  } /* boxes under each other */
+  .home-section {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: 24px 16px;
+  }
+  .welcome-area {
+    margin-top: -24px;       /* matches the smaller .page top space above */
+  }
+  .week-days {
+    gap: 2px;
+  }
+  .week-day .mood-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .week-day .mood-icon .material-symbols-rounded {
+    font-size: 17px;
+  }
+  .week-day small {
+    display: none;
+  } /* no room for the mood name */
+  .scale-dot {
+    width: 32px;
+    height: 32px;
+  }
+  .scale small {
+    display: none;
+  } /* no room for "Very low" / "Full" */
+  .welcome h1 {
+    font-size: 28px;
+  }
+  .welcome-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Hide the page scrollbar (the page still scrolls) */
+html {
+  scrollbar-width: none;           /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none;                   /* Chrome, Edge, Safari */
+}

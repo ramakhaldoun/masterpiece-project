@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - You're not alone</title>
+
+    <!-- Fonts and icons from the internet (Cairo = the Arabic font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Our own CSS: base.css is shared by all pages, landing.css is only for this page -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/landing.css">
+  </head>
+
+  <body>
+    <!-- =====================================================
+         1. NAVBAR (the bar at the top)
+         ===================================================== -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <!-- Logo -->
+        <a href="#home" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+
+        <!-- Links that scroll down to each section -->
+        <nav class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#support">Support</a>
+          <a href="#stories">Stories</a>
+        </nav>
+
+        <!-- Language + Join button -->
+        <div class="nav-buttons">
+          <!-- shows the OTHER language: "العربية" on the English page, "English" on the Arabic page -->
+          <a href="home.html" class="btn btn-purple open-register" id="nav-join">Join Us</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+         2. HERO (the big white card at the top)
+         ===================================================== -->
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <!-- Centered title -->
+        <div class="hero-top">
+          <span class="badge"><i class="fa-solid fa-ribbon"></i> <span>For women facing cancer, and the people beside them</span></span>
+          <h1>Hope grows, even on the hard days</h1>
+          <!-- the second line is always in the OTHER language -->
+          <p class="arabic-text">الأمل يزهر حتى في الأيام الصعبة</p>
+        </div>
+
+        <!-- Three columns: left text | picture | right testimonial -->
+        <div class="hero-columns">
+          <!-- LEFT column -->
+          <div class="hero-left">
+            <p class="hero-text">
+              Ma’aky is a gentle, private community for women going through cancer.
+              Share what you’re feeling, move at your own pace, and be heard by
+              women who truly understand.
+            </p>
+
+            <div>
+              <a href="home.html" class="btn btn-soft btn-big open-register" id="hero-join">Get Started</a>
+              <br>
+              <a href="home.html" class="text-link open-login">Already a member? Log in</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>4,000+</strong>
+                <span>Women growing<br>together in Jordan</span>
+              </div>
+              <div class="stat">
+                <strong>24/7</strong>
+                <span>Nour, your<br>gentle companion</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MIDDLE column: the picture -->
+          <div class="hero-middle">
+            <img src="../images/hero-art.svg" alt="A smiling woman in a headscarf with flowers blooming above her">
+          </div>
+
+          <!-- RIGHT column -->
+          <div class="hero-right">
+            <div>
+              <h2 class="small-title">What they say</h2>
+              <div class="avatars">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;q=80&amp;w=120" alt="">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;q=80&amp;w=120" alt="">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;q=80&amp;w=120" alt="">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&amp;fit=crop&amp;q=80&amp;w=120" alt="">
+              </div>
+              <p class="quote">
+                “I thought I would face treatment alone. Here I found women who sat
+                with me through every hard week, and I learned to be kind to myself again.”
+              </p>
+              <p class="quote-author">— A Ma’aky community member</p>
+            </div>
+
+            <a href="home.html" class="nour-card open-register">
+              <span>MEET NOUR,<br>YOUR COMPANION</span>
+              <span class="nour-icon"><i class="fa-solid fa-heart"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         3. ABOUT
+         ===================================================== -->
+    <section class="section" id="about">
+      <div class="section-title">
+        <span class="small-label">About Ma’aky</span>
+        <h2>A place made for the long road</h2>
+        <p>
+          Cancer changes your days, your body and sometimes your sense of who you
+          are. Ma’aky (معكِ, “with you”) is here so you don’t carry it quietly.
+        </p>
+      </div>
+
+      <!-- Each card: a photo on top, then the icon + title, then the text -->
+      <div class="cards about-cards">
+        <div class="card about-card">
+          <img class="about-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+          <div class="about-body">
+            <div class="about-head">
+              <div class="card-icon purple"><i class="fa-regular fa-comments"></i></div>
+              <h3>Be heard</h3>
+            </div>
+            <p>Small, moderated circles and private messages with women who understand, with nothing to explain.</p>
+          </div>
+        </div>
+        <div class="card about-card">
+          <img class="about-photo" src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+          <div class="about-body">
+            <div class="about-head">
+              <div class="card-icon green"><i class="fa-solid fa-spa"></i></div>
+              <h3>Move gently</h3>
+            </div>
+            <p>Soft yoga, art and walks in Amman, shaped around how you feel that day, not how you “should”.</p>
+          </div>
+        </div>
+        <div class="card about-card">
+          <img class="about-photo" src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+          <div class="about-body">
+            <div class="about-head">
+              <div class="card-icon pink"><i class="fa-solid fa-heart"></i></div>
+              <h3>Never alone</h3>
+            </div>
+            <p>Nour, your companion, listens when it’s heavy and suggests something kind based on your mood.</p>
+          </div>
+        </div>
+        <div class="card about-card">
+          <img class="about-photo" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+          <div class="about-body">
+            <div class="about-head">
+              <div class="card-icon peach"><i class="fa-solid fa-bag-shopping"></i></div>
+              <h3>Your daily needs</h3>
+            </div>
+            <p>Find, borrow or share everyday care essentials, from recovery pillows to comfort items that make each day a little easier.</p>
+          </div>
+        </div>
+        <div class="card about-card">
+          <img class="about-photo" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+          <div class="about-body">
+            <div class="about-head">
+              <div class="card-icon blue"><i class="fa-solid fa-book"></i></div>
+              <h3>Understand your journey</h3>
+            </div>
+            <p>Trusted, easy-to-understand information about treatment, side effects and preparing for appointments.</p>
+          </div>
+        </div>
+        <div class="card about-card">
+          <img class="about-photo" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+          <div class="about-body">
+            <div class="about-head">
+              <div class="card-icon gold"><i class="fa-solid fa-location-dot"></i></div>
+              <h3>Support near you</h3>
+            </div>
+            <p>Helplines, clinics and support groups across Jordan, gathered in one place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         4. SUPPORT
+         ===================================================== -->
+    <section class="section" id="support">
+      <div class="support-layout">
+
+        <!-- LEFT: title, text, ‹ › buttons and Join Us -->
+        <div class="support-text">
+          <span class="small-label">Support</span>
+          <h2>With you at every stage</h2>
+          <p>
+            Diagnosis, treatment, recovery, remission, or supporting someone you
+            love. Wherever you are on the journey, there is a community made for you here.
+          </p>
+
+          <div class="carousel-arrows">
+            <button class="carousel-arrow" id="carousel-prev" aria-label="Previous communities"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-arrow" id="carousel-next" aria-label="Next communities"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+
+          <div class="support-buttons">
+            <a href="home.html" class="btn btn-purple open-register">Join Us</a>
+
+            <a href="communities.html" class="text-link" id="all-communities"><span>See all communities</span> <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="carousel">
+          <div class="carousel-track" id="carousel-track">
+            <a href="communities.html" class="community-slide">
+              <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="">
+              <div class="community-slide-body">
+                <h3>Newly Diagnosed Circle</h3>
+                <p>For the first weeks after a diagnosis, when everything feels new.</p>
+                <span><i class="fa-solid fa-users"></i> <span>640 members · Online</span></span>
+              </div>
+            </a>
+            <a href="communities.html" class="community-slide">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="">
+              <div class="community-slide-body">
+                <h3>In Treatment Together</h3>
+                <p>Support through chemo, radiation and the long days in between.</p>
+                <span><i class="fa-solid fa-users"></i> <span>1,120 members · Amman</span></span>
+              </div>
+            </a>
+            <a href="communities.html" class="community-slide">
+              <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="">
+              <div class="community-slide-body">
+                <h3>Survivors &amp; Thrivers</h3>
+                <p>Life after treatment: finding your rhythm and your joy again.</p>
+                <span><i class="fa-solid fa-users"></i> <span>2,100 members · Amman</span></span>
+              </div>
+            </a>
+            <a href="communities.html" class="community-slide">
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="">
+              <div class="community-slide-body">
+                <h3>Young Women Facing Cancer</h3>
+                <p>For women under 40, alongside studies, careers and dreams.</p>
+                <span><i class="fa-solid fa-users"></i> <span>480 members · Online</span></span>
+              </div>
+            </a>
+            <a href="communities.html" class="community-slide">
+              <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="">
+              <div class="community-slide-body">
+                <h3>Mothers &amp; Caregivers</h3>
+                <p>For mothers with cancer and the women caring for loved ones.</p>
+                <span><i class="fa-solid fa-users"></i> <span>1,240 members · Irbid &amp; Online</span></span>
+              </div>
+            </a>
+            <a href="communities.html" class="community-slide">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="">
+              <div class="community-slide-body">
+                <h3>Mindfulness &amp; Healing</h3>
+                <p>Gentle yoga, breathing and calm routines for body and mind.</p>
+                <span><i class="fa-solid fa-users"></i> <span>1,580 members · Jabal Amman</span></span>
+              </div>
+            </a>
+          </div>
+
+          <div class="carousel-dots" id="carousel-dots"><button class="carousel-dot active" aria-label="Show community 1"></button><button class="carousel-dot" aria-label="Show community 2"></button><button class="carousel-dot" aria-label="Show community 3"></button><button class="carousel-dot" aria-label="Show community 4"></button><button class="carousel-dot" aria-label="Show community 5"></button><button class="carousel-dot" aria-label="Show community 6"></button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         5. STORIES
+         ===================================================== -->
+    <section class="section" id="stories">
+      <div class="section-title stories-intro">
+        <h2>Voices of Hope and Strength</h2>
+        <p>
+          Every journey holds a story of courage, hope, and strength. Discover the voices of women
+          who have faced cancer in their own way, shared their struggles, and found light in the
+          darkest moments. <strong>Every story matters. Every voice inspires.</strong>
+        </p>
+      </div>
+
+      <div class="cards">
+        <a href="stories.html" class="photo-story-card">
+          <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+          <div class="photo-story-body">
+            <span class="read-label">Read</span>
+            <h3>The first time someone said “me too”</h3>
+            <p class="photo-story-author">Community member, Amman</p>
+          </div>
+        </a>
+        <a href="stories.html" class="photo-story-card">
+          <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+          <div class="photo-story-body">
+            <span class="read-label">Read</span>
+            <h3>My body is still mine</h3>
+            <p class="photo-story-author">Community member, Irbid</p>
+          </div>
+        </a>
+        <a href="stories.html" class="photo-story-card">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+          <div class="photo-story-body">
+            <span class="read-label">Read</span>
+            <h3>Learning how to be there</h3>
+            <p class="photo-story-author">Caregiver, Zarqa</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="more-stories-row">
+        <a href="stories.html" class="more-button" id="more-stories">
+          <span>Read more stories</span> <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         6. FINAL CALL TO ACTION + FOOTER (one full screen)
+         ===================================================== -->
+    <section class="section section-final" id="join">
+      <!-- The purple box: text + button on one side, the illustration on the other -->
+      <div class="cta">
+        <div class="cta-text">
+          <h2>Ready when you are.</h2>
+          <p>Create your account in under a minute. No pressure, nothing to keep up with.</p>
+          <a href="home.html" class="btn btn-white btn-big open-register">Join Us</a>
+        </div>
+        <img class="cta-art" src="../images/join-art.svg" alt="Two women holding hands, lifting flowers toward a smiling sun">
+      </div>
+
+      <footer class="footer">
+        <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+        <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+      </footer>
+    </section>
+
+    <div class="popup-overlay hidden" id="popup-overlay">
+      <div class="popup">
+        <!-- Purple side -->
+        <div class="popup-left">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <p class="popup-quote">“You don’t have to carry it all by yourself.”</p>
+          <!-- always in the OTHER language -->
+          <span class="popup-arabic">لستِ وحدكِ، نحن معكِ</span>
+        </div>
+
+        <!-- White side with the forms -->
+        <div class="popup-right">
+          <button class="close-button" id="close-popup">×</button>
+
+          <h2 id="popup-title">Welcome to Ma'aky</h2>
+          <p id="popup-subtitle" class="popup-subtitle">Create your space in a minute.</p>
+
+          <!-- Shown only when someone clicked a story or a community -->
+          <p class="popup-notice hidden" id="popup-notice">
+            <i class="fa-solid fa-heart"></i>
+
+            <span id="popup-notice-text"></span>
+          </p>
+
+          <!-- Two tabs -->
+          <div class="tabs" id="tabs">
+            <button class="tab active" id="tab-register">Create account</button>
+            <button class="tab" id="tab-login">Log in</button>
+          </div>
+
+          <!-- REGISTER FORM (novalidate = we show our own error messages, not the browser's) -->
+          <form id="register-form" novalidate="">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" placeholder="e.g. rama.h">
+            <p class="error-text" id="error-reg-username"></p>
+
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" placeholder="you@example.com">
+            <p class="error-text" id="error-reg-email"></p>
+
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="At least 8 characters, with a number">
+            <p class="error-text" id="error-reg-password"></p>
+
+            <label class="show-password">
+              <input type="checkbox" class="show-password-box"> <span>Show password</span>
+            </label>
+
+            <button type="submit" class="btn btn-purple full-width">Create my account</button>
+            <p class="switch-text"><span>Already with us?</span> <button type="button" class="text-link" id="go-to-login">Log in</button></p>
+          </form>
+
+          <!-- LOGIN FORM -->
+          <form id="login-form" class="hidden" novalidate="">
+            <label for="login-id">Email or username</label>
+            <input type="text" id="login-id" placeholder="you@example.com">
+            <p class="error-text" id="error-login-id"></p>
+
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Your password">
+            <p class="error-text" id="error-login-password"></p>
+
+            <label class="show-password">
+              <input type="checkbox" class="show-password-box"> <span>Show password</span>
+            </label>
+
+            <p class="error-text" id="login-error"></p>
+
+            <button type="submit" class="btn btn-purple full-width">Log in</button>
+            <p class="switch-text"><span>New here?</span> <button type="button" class="text-link" id="go-to-register">Create an account</button></p>
+          </form>
+
+          <!-- SUCCESS MESSAGE -->
+          <div id="success-box" class="success-box hidden">
+            <div class="success-circle"><i class="fa-solid fa-check"></i></div>
+            <h3 id="success-title">Welcome</h3>
+            <p id="success-text">Opening your space…</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body></html>

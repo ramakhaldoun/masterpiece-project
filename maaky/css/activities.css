@@ -1,0 +1,261 @@
+/* =====================================================
+   ACTIVITIES PAGE CSS
+   The banner and the popup are shared with the Communities page,
+   so they are in base.css (section 10). This file has:
+   1. The banner photo
+   2. The activity cards
+   3. The photo gallery (inside the popup)
+   ===================================================== */
+
+
+/* ---------- 1. THE BANNER PHOTO ---------- */
+.page-hero-photo {
+  background-image: url('https://images.unsplash.com/photo-1588286840104-8957b019727f?auto=format&fit=crop&q=80&w=1600');
+}
+
+
+/* ---------- 2. ACTIVITY CARDS ---------- */
+
+/* As many columns as fit, each at least 300px wide */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* One card: click it to open the popup */
+.activity-card {
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;          /* the picture follows the round corners */
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-big);
+}
+
+/* The cover photo, with the category, bookmark and photo count on top of it */
+.activity-image {
+  position: relative;        /* so the small labels can be placed inside it */
+  height: 190px;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: white;
+  color: var(--purple-dark);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 30px;
+}
+
+/* "4 photos" in the bottom-left corner of the cover */
+.photo-count {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  background-color: rgba(43, 34, 55, 0.65);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+.bookmark-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.bookmark-button.saved {
+  color: var(--purple);
+}
+
+.activity-body {
+  padding: 22px;
+}
+
+/* Date box on the left, title and text on the right */
+.activity-top {
+  display: flex;
+  gap: 16px;
+}
+
+.date-badge {
+  min-width: 58px;
+  text-align: center;
+  background-color: var(--lilac);
+  border-radius: 14px;
+  padding: 6px;
+  line-height: 1.2;
+  color: var(--purple-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.date-badge strong {
+  display: block;
+  font-size: 22px;
+}
+
+.activity-top h3 {
+  font-size: 18px;
+}
+
+.activity-top p {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.activity-info {
+  display: flex;
+  gap: 18px;
+  margin: 16px 0;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.activity-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.activity-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+
+/* ---------- 3. PHOTO GALLERY (inside the popup) ---------- */
+.gallery {
+  position: relative;        /* so the arrows can be placed on the big photo */
+}
+
+/* The big photo */
+.gallery-main {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+/* The ‹ › arrows on the big photo */
+.gallery-arrow {
+  position: absolute;
+  top: 170px;                /* half of the big photo's height */
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.gallery-arrow:hover {
+  background-color: white;
+}
+
+.gallery-prev { left: 14px; }
+.gallery-next { right: 14px; }
+
+/* "2 / 4" on the big photo */
+.gallery-counter {
+  position: absolute;
+  top: 300px;
+  left: 16px;
+  background-color: rgba(43, 34, 55, 0.65);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+/* The small photos under the big one */
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 12px 36px 0;
+}
+
+.gallery-thumb {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  opacity: 0.6;              /* faded until chosen */
+  transition: opacity 0.2s ease;
+}
+
+.gallery-thumb:hover {
+  opacity: 0.9;
+}
+
+/* activities.js adds "active" to the photo that is shown big */
+.gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--purple);
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+}
+
+/* "What to bring" box */
+.popup-bring {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background-color: var(--lilac-soft);
+  font-size: 14px;
+}
+
+.popup-bring i {
+  color: var(--purple);
+  margin-right: 6px;
+}
+
+
+/* ---------- SMALL SCREENS ---------- */
+@media (max-width: 520px) {
+  .gallery-main { height: 240px; }
+  .gallery-arrow { top: 120px; }
+  .gallery-counter { top: 200px; }
+  .gallery-thumbs { padding: 10px 20px 0; gap: 6px; }
+  .gallery-thumb img { height: 54px; }
+}

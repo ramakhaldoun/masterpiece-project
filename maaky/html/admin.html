@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - Admin dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin.css">
+  </head>
+  <body class="app">
+
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="admin.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">Admin dashboard</span>
+          </div>
+        </a>
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+        <nav class="sidebar-nav">
+          <p class="sidebar-heading">Dashboard</p>
+          <a href="#overview" class="sidebar-link active" data-section="overview">
+            <i class="fa-solid fa-chart-simple"></i> Overview
+          </a>
+
+          <p class="sidebar-heading">Waiting for approval</p>
+          <a href="#stories" class="sidebar-link" data-section="stories">
+            <i class="fa-solid fa-feather"></i> Stories
+            <span class="count-badge hidden" id="badge-stories">0</span>
+          </a>
+          <a href="#items" class="sidebar-link" data-section="items">
+            <i class="fa-solid fa-box-open"></i> Shared items
+            <span class="count-badge hidden" id="badge-items">0</span>
+          </a>
+
+          <p class="sidebar-heading">Manage the website</p>
+          <a href="#members" class="sidebar-link" data-section="members">
+            <i class="fa-solid fa-users"></i> Members
+          </a>
+          <a href="#activities" class="sidebar-link" data-section="activities">
+            <i class="fa-solid fa-calendar-days"></i> Activities
+          </a>
+          <a href="#communities" class="sidebar-link" data-section="communities">
+            <i class="fa-solid fa-people-group"></i> Communities
+          </a>
+        </nav>
+
+        <a href="home.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> View the website
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside>
+
+    <main class="page" id="admin-main">
+
+      <section class="admin-section" id="section-overview">
+        <div class="admin-title">
+          <span class="small-label">Admin dashboard</span>
+          <h1>Welcome back</h1>
+          <p>Here is what is happening on Ma'aky today.</p>
+        </div>
+        <div class="stat-grid" id="stat-grid">
+      <a href="#stories" class="card stat-card">
+        <div class="card-icon pink"><i class="fa-solid fa-feather"></i></div>
+        <div>
+          <strong>0</strong>
+          <span>Stories waiting</span>
+        </div>
+      </a>
+      <a href="#items" class="card stat-card">
+        <div class="card-icon gold"><i class="fa-solid fa-box-open"></i></div>
+        <div>
+          <strong>0</strong>
+          <span>Items waiting</span>
+        </div>
+      </a>
+      <a href="#members" class="card stat-card">
+        <div class="card-icon purple"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <strong>0</strong>
+          <span>Members</span>
+        </div>
+      </a>
+      <a href="#stories" class="card stat-card">
+        <div class="card-icon green"><i class="fa-solid fa-book-open"></i></div>
+        <div>
+          <strong>11</strong>
+          <span>Published stories</span>
+        </div>
+      </a>
+      <a href="#activities" class="card stat-card">
+        <div class="card-icon blue"><i class="fa-solid fa-calendar-days"></i></div>
+        <div>
+          <strong>4</strong>
+          <span>Activities</span>
+        </div>
+      </a>
+      <a href="#communities" class="card stat-card">
+        <div class="card-icon peach"><i class="fa-solid fa-people-group"></i></div>
+        <div>
+          <strong>6</strong>
+          <span>Communities</span>
+        </div>
+      </a></div>
+      </section>
+
+      <!-- =====================================================
+           2. STORIES: approve the new ones, remove published ones
+           ===================================================== -->
+      <section class="admin-section hidden" id="section-stories">
+        <div class="admin-title">
+          <span class="small-label">Waiting for approval</span>
+          <h1>Stories</h1>
+          <p>Read each story before it is published. Approve it, or reject it if it is not right for the website.</p>
+        </div>
+        <h2 class="admin-heading">New stories</h2>
+        <div class="review-list" id="pending-stories"></div>
+
+        <h2 class="admin-heading">Published stories</h2>
+        <div class="admin-table" id="published-stories"></div>
+      </section>
+
+      <!-- =====================================================
+           3. SHARED ITEMS (Your Daily Needs)
+           ===================================================== -->
+      <section class="admin-section hidden" id="section-items">
+        <div class="admin-title">
+          <span class="small-label">Waiting for approval</span>
+          <h1>Shared items</h1>
+          <p>Check the photos and the description of each item before other members can see it.</p>
+        </div>
+        <h2 class="admin-heading">New items</h2>
+        <div class="review-list" id="pending-items"></div>
+
+        <h2 class="admin-heading">Published items</h2>
+        <div class="admin-table" id="published-items"></div>
+      </section>
+
+      <!-- =====================================================
+           4. MEMBERS
+           ===================================================== -->
+      <section class="admin-section hidden" id="section-members">
+        <div class="admin-title">
+          <span class="small-label">Manage the website</span>
+          <h1>Members</h1>
+          <p>Everyone who created an account.</p>
+        </div>
+        <div class="admin-table" id="member-list"></div>
+      </section>
+
+      <!-- =====================================================
+           5. ACTIVITIES: add a new one + the list
+           ===================================================== -->
+      <section class="admin-section hidden" id="section-activities">
+        <div class="admin-title">
+          <span class="small-label">Manage the website</span>
+          <h1>Activities</h1>
+          <p>Add a new activity or remove an old one.</p>
+        </div>
+
+        <!-- novalidate = we show our own error message -->
+        <form class="card admin-form" id="activity-form" novalidate="">
+          <h2>Add an activity</h2>
+          <div class="form-row">
+            <div>
+              <label for="activity-title">Title</label>
+              <input type="text" id="activity-title" placeholder="e.g. Gentle Yoga Morning">
+            </div>
+            <div>
+              <label for="activity-category">Category</label>
+              <select id="activity-category">
+                <option value="Wellness">Wellness</option>
+                <option value="Creative">Creative</option>
+                <option value="Support">Support</option>
+                <option value="Learning">Learning</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="activity-date">Date</label>
+              <input type="date" id="activity-date">
+            </div>
+            <div>
+              <label for="activity-time">Time</label>
+              <input type="text" id="activity-time" placeholder="e.g. 10:00 AM">
+            </div>
+          </div>
+          <label for="activity-location">Place</label>
+          <input type="text" id="activity-location" placeholder="e.g. Jabal Amman">
+
+          <label for="activity-description">Short description (on the card)</label>
+          <input type="text" id="activity-description">
+
+          <label for="activity-about">About the activity (in the popup)</label>
+          <textarea id="activity-about" rows="3"></textarea>
+
+          <label for="activity-bring">What to bring</label>
+          <input type="text" id="activity-bring">
+
+          <label for="activity-photo">Photo link (leave empty for a default photo)</label>
+          <input type="text" id="activity-photo" placeholder="https://...">
+
+          <p class="error-text" id="activity-error"></p>
+          <button type="submit" class="btn btn-purple"><i class="fa-solid fa-plus"></i> Add activity</button>
+        </form>
+
+        <h2 class="admin-heading">All activities</h2>
+        <div class="admin-table" id="activity-list"></div>
+      </section>
+
+      <!-- =====================================================
+           6. COMMUNITIES: add a new one + the list
+           ===================================================== -->
+      <section class="admin-section hidden" id="section-communities">
+        <div class="admin-title">
+          <span class="small-label">Manage the website</span>
+          <h1>Communities</h1>
+          <p>Add a new community or remove an old one.</p>
+        </div>
+
+        <form class="card admin-form" id="community-form" novalidate="">
+          <h2>Add a community</h2>
+          <label for="community-title">Name</label>
+          <input type="text" id="community-title" placeholder="e.g. Young Survivors Circle">
+
+          <div class="form-row">
+            <div>
+              <label for="community-meets">When does it meet?</label>
+              <input type="text" id="community-meets" placeholder="e.g. Every Sunday · 6:00 PM">
+            </div>
+            <div>
+              <label for="community-location">Where?</label>
+              <input type="text" id="community-location" placeholder="e.g. Online">
+            </div>
+          </div>
+
+          <label for="community-description">Short description (on the card)</label>
+          <input type="text" id="community-description">
+
+          <label for="community-about">About the community (in the popup)</label>
+          <textarea id="community-about" rows="3"></textarea>
+
+          <label for="community-photo">Photo link (leave empty for a default photo)</label>
+          <input type="text" id="community-photo" placeholder="https://...">
+
+          <p class="error-text" id="community-error"></p>
+          <button type="submit" class="btn btn-purple"><i class="fa-solid fa-plus"></i> Add community</button>
+        </form>
+
+        <h2 class="admin-heading">All communities</h2>
+        <div class="admin-table" id="community-list"></div>
+      </section>
+    </main>
+  </body></html>

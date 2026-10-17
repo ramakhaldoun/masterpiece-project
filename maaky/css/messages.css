@@ -1,0 +1,227 @@
+/* MESSAGES PAGE CSS (shared styles are in base.css) */
+
+/* The big white box: chat list on the left, open chat on the right */
+.chat-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  height: 640px;
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+
+/* ---------- LEFT: list of chats ---------- */
+.chat-sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;             /* lets the list scroll instead of growing */
+  border-right: 1px solid var(--border);
+}
+
+.chat-sidebar-top {
+  padding: 20px;
+}
+
+.chat-sidebar-top h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  border: none;
+  background-color: var(--lilac-soft);
+  color: var(--text-gray);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip.active {
+  background-color: var(--purple);
+  color: white;
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;          /* scroll when there are many chats */
+}
+
+.chat-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+.chat-item:hover,
+.chat-item.active {
+  background-color: var(--lilac-soft);
+}
+
+.chat-item img,
+.chat-head img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-info {
+  flex: 1;
+  min-width: 0;              /* lets long text be cut with "..." */
+}
+
+.chat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.chat-row h4 {
+  font-size: 15px;
+}
+
+.chat-row span {
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+/* One line only, long text ends with "..." */
+.chat-preview {
+  font-size: 13px;
+  color: var(--text-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unread {
+  background-color: var(--purple);
+  color: white;
+  font-size: 12px;
+  border-radius: 30px;
+  padding: 0 8px;
+}
+
+
+/* ---------- RIGHT: the open chat ---------- */
+.chat-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--lilac-soft);
+}
+
+/* Message bubbles */
+.bubble {
+  max-width: 70%;
+  padding: 10px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+}
+
+.bubble span {
+  display: block;
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.bubble.received {
+  align-self: flex-start;    /* left side */
+  background-color: white;
+  border-bottom-left-radius: 4px;
+}
+
+.bubble.sent {
+  align-self: flex-end;      /* right side */
+  background-color: var(--purple);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* An event invitation inside the chat */
+.invite-card {
+  align-self: flex-start;
+  max-width: 320px;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.invite-card small {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.invite-card h4 {
+  margin: 2px 0;
+}
+
+.invite-card p {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.chat-form input {
+  flex: 1;
+}
+
+.privacy {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-gray);
+  padding-bottom: 10px;
+}
+
+
+/* ---------- SMALL SCREENS: list above the chat ---------- */
+@media (max-width: 800px) {
+  .chat-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .chat-sidebar {
+    max-height: 280px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .chat-main {
+    height: 520px;
+  }
+}

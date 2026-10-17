@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - Your Daily Needs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/daily-needs.css">
+  </head>
+  <body data-page="daily-needs" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link ">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link ">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link active">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link ">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link ">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+
+      <!-- =====================================================
+           1. TOP BANNER: a wide photo + a card that overlaps it
+           (the styles are shared with Communities, in base.css)
+           ===================================================== -->
+      <section class="page-hero">
+        <div class="page-hero-photo"></div>
+
+        <div class="page-hero-frame">
+          <div class="page-hero-card">
+            <p class="breadcrumb"><a href="home.html">Home</a> &gt; Your Daily Needs</p>
+
+            <h1>Your daily needs, shared with care</h1>
+
+            <p class="page-hero-text">
+              Find, borrow or share the everyday things that make treatment and recovery a little easier,
+              from recovery pillows and scarves to rides and home-cooked meals.
+              Everything here is given by women who understand, and it is always free.
+            </p>
+
+            <button class="btn btn-white offer-button" id="offer-open">
+              <i class="fa-solid fa-hand-holding-heart"></i> <span>Offer an item</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="need-filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="Borrow"><i class="fa-solid fa-rotate"></i> <span>Borrow</span></button>
+        <button class="chip" data-filter="Share"><i class="fa-solid fa-hand-holding-heart"></i> <span>Share</span></button>
+        <button class="chip" data-filter="Free"><i class="fa-solid fa-gift"></i> <span>Free</span></button>
+      </div>
+
+      <div class="need-grid" id="need-grid">
+    <button class="need-card" data-id="1">
+      
+    <div class="need-media-box">
+      <img class="need-media" src="https://images.unsplash.com/photo-1629949009765-40fc74c9ec21?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="Recovery pillow">
+      <span class="photo-count"><i class="fa-regular fa-images"></i> 3 photos</span>
+    </div>
+      <div class="need-body">
+        <span class="need-tag blue">Borrow</span>
+        <h3>Recovery pillow</h3>
+        <p>Soft support pillow for after surgery, free to borrow.</p>
+        
+        <div class="need-info">
+          <span><i class="fa-solid fa-location-dot"></i>Amman</span>
+          <span><i class="fa-solid fa-box-open"></i>3 available</span>
+        </div>
+      </div>
+    </button>
+    <button class="need-card" data-id="2">
+      
+    <div class="need-media-box">
+      <img class="need-media" src="https://images.unsplash.com/photo-1617331721458-bd3bd3f9c7f8?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="Soft head scarves">
+      <span class="photo-count"><i class="fa-regular fa-images"></i> 2 photos</span>
+    </div>
+      <div class="need-body">
+        <span class="need-tag pink">Share</span>
+        <h3>Soft head scarves</h3>
+        <p>Comfortable cotton scarves shared by community members.</p>
+        
+        <div class="need-info">
+          <span><i class="fa-solid fa-location-dot"></i>Amman &amp; Irbid</span>
+          <span><i class="fa-solid fa-box-open"></i>12 available</span>
+        </div>
+      </div>
+    </button>
+    <button class="need-card" data-id="3">
+      
+    <div class="need-media-box">
+      <img class="need-media" src="https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="Compression garments">
+      <span class="photo-count"><i class="fa-regular fa-images"></i> 2 photos</span>
+    </div>
+      <div class="need-body">
+        <span class="need-tag blue">Borrow</span>
+        <h3>Compression garments</h3>
+        <p>Medical support garments in different sizes.</p>
+        
+        <div class="need-info">
+          <span><i class="fa-solid fa-location-dot"></i>Amman</span>
+          <span><i class="fa-solid fa-box-open"></i>5 available</span>
+        </div>
+      </div>
+    </button>
+    <button class="need-card" data-id="4">
+      
+    <div class="need-media-box">
+      <img class="need-media" src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="Comfort care kit">
+      <span class="photo-count"><i class="fa-regular fa-images"></i> 3 photos</span>
+    </div>
+      <div class="need-body">
+        <span class="need-tag green">Free</span>
+        <h3>Comfort care kit</h3>
+        <p>Lip balm, gentle lotion and a warm blanket for treatment days.</p>
+        
+        <div class="need-info">
+          <span><i class="fa-solid fa-location-dot"></i>Delivered across Jordan</span>
+          <span><i class="fa-solid fa-box-open"></i>20 available</span>
+        </div>
+      </div>
+    </button>
+    <button class="need-card" data-id="5">
+      
+    <div class="need-media-box">
+      <img class="need-media" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="Wig library">
+      <span class="photo-count"><i class="fa-regular fa-images"></i> 2 photos</span>
+    </div>
+      <div class="need-body">
+        <span class="need-tag blue">Borrow</span>
+        <h3>Wig library</h3>
+        <p>Natural-looking wigs to borrow during treatment.</p>
+        
+        <div class="need-info">
+          <span><i class="fa-solid fa-location-dot"></i>Amman, Jabal Al-Weibdeh</span>
+          <span><i class="fa-solid fa-box-open"></i>4 available</span>
+        </div>
+      </div>
+    </button>
+    <button class="need-card" data-id="6">
+      
+    <div class="need-media-box">
+      <img class="need-media" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="Rides to treatment">
+      <span class="photo-count"><i class="fa-regular fa-images"></i> 2 photos</span>
+    </div>
+      <div class="need-body">
+        <span class="need-tag pink">Share</span>
+        <h3>Rides to treatment</h3>
+        <p>Volunteer drivers for hospital days.</p>
+        
+        <div class="need-info">
+          <span><i class="fa-solid fa-location-dot"></i>Amman &amp; Zarqa</span>
+          <span><i class="fa-solid fa-box-open"></i>8 available</span>
+        </div>
+      </div>
+    </button></div>
+
+      <!-- "See more items": shows the next 6 items (hidden when all are shown) -->
+      <div class="more-needs" id="more-needs">
+        <button class="more-button" id="more-needs-button">
+          <span>See more items</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </main>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+  </body></html>

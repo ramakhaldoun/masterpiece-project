@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - Stories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/stories.css">
+  </head>
+  <body data-page="stories" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link ">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link active">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link ">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link ">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link ">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+      <!-- 1. TITLE + INTRODUCTION (hidden when a full story is open) -->
+      <div class="stories-title" id="stories-header">
+        <h1>Voices of Hope and Strength</h1>
+        <p>
+          Every journey holds a story of courage, hope, and strength. Discover the voices of women
+          who have faced cancer in their own way, shared their struggles, and found light in the
+          darkest moments. Their stories remind us that even on the hardest days, hope can grow,
+          and no journey is ever the same.
+          <strong>Every story matters. Every voice inspires.</strong>
+        </p>
+
+        <!-- Opens the "Share your story" form below -->
+        <div class="share-row">
+          <button class="btn btn-purple btn-big" id="share-open">
+            <i class="fa-solid fa-pen-nib"></i> <span>Share your story</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="story-grid" id="story-grid">
+    <a class="photo-story-card" href="stories.html?story=1">
+      <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+      <div class="photo-story-body">
+        <span class="read-label">Read</span>
+        <h3>The first time someone said “me too”</h3>
+        <p class="photo-story-author">Community member, Amman</p>
+      </div>
+    </a>
+    <a class="photo-story-card" href="stories.html?story=2">
+      <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+      <div class="photo-story-body">
+        <span class="read-label">Read</span>
+        <h3>My body is still mine</h3>
+        <p class="photo-story-author">Community member, Irbid</p>
+      </div>
+    </a>
+    <a class="photo-story-card" href="stories.html?story=3">
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+      <div class="photo-story-body">
+        <span class="read-label">Read</span>
+        <h3>Learning how to be there</h3>
+        <p class="photo-story-author">Caregiver, Zarqa</p>
+      </div>
+    </a>
+    <a class="photo-story-card" href="stories.html?story=4">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+      <div class="photo-story-body">
+        <span class="read-label">Read</span>
+        <h3>A network of sisters</h3>
+        <p class="photo-story-author">Rania M., Amman</p>
+      </div>
+    </a>
+    <a class="photo-story-card" href="stories.html?story=5">
+      <img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+      <div class="photo-story-body">
+        <span class="read-label">Read</span>
+        <h3>Noticing before it breaks</h3>
+        <p class="photo-story-author">Lina K., Irbid</p>
+      </div>
+    </a>
+    <a class="photo-story-card" href="stories.html?story=6">
+      <img src="https://images.unsplash.com/photo-1456086272160-b28b0645b729?auto=format&amp;fit=crop&amp;q=80&amp;w=900" alt="">
+      <div class="photo-story-body">
+        <span class="read-label">Read</span>
+        <h3>Painting my way back</h3>
+        <p class="photo-story-author">Hala S., Madaba</p>
+      </div>
+    </a></div>
+
+      <!-- 3. "Read more stories": shows the next 6 stories (hidden when all are shown) -->
+      <div class="more-stories" id="more-stories">
+        <button class="more-button" id="more-button">
+          <span>Read more stories</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <article class="article hidden" id="story-article"></article>
+    </main>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+  </body></html>

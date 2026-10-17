@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - Understand Your Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/understand-journey.css">
+  </head>
+  <body data-page="understand-journey" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link ">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link ">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link ">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link active">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link ">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link ">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+
+      <!-- =====================================================
+           1. TOP BANNER: a wide photo + a card that overlaps it
+           (the styles are shared with other pages, in base.css)
+           ===================================================== -->
+      <section class="page-hero">
+        <div class="page-hero-photo"></div>
+
+        <div class="page-hero-frame">
+          <div class="page-hero-card">
+            <p class="breadcrumb"><a href="home.html">Home</a> &gt; Understand Your Journey</p>
+
+            <h1>Understand your journey</h1>
+
+            <p class="page-hero-text">
+              Trusted books, articles and guides about treatment, side effects, feelings and recovery,
+              written in clear, gentle words. Save what you want to read later, and share what helped you
+              with your community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="recommended">
+        <div class="recommended-head">
+          <span class="small-label">Just for you</span>
+          <h2>Recommended for you</h2>
+          <p id="recommended-note">Popular in the community. <a href="profile.html">Add your journey stage to your profile</a> to get picks made for you.</p>
+        </div>
+        <div class="library-grid" id="recommended-grid">
+    <article class="library-card" data-id="5">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-regular fa-newspaper"></i> Article</span>
+      </div>
+      <div class="library-body">
+        <span class="reason"><i class="fa-solid fa-heart"></i>Loved by the community</span>
+        <h3>Questions to Ask Your Doctor</h3>
+        <p class="library-author">Ma'aky care team</p>
+        <p class="library-text">A gentle checklist to bring to your next appointment.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>6 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="9">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-map"></i> Guide</span>
+      </div>
+      <div class="library-body">
+        <span class="reason"><i class="fa-solid fa-heart"></i>Loved by the community</span>
+        <h3>Your First Weeks After Diagnosis</h3>
+        <p class="library-author">Ma'aky care team</p>
+        <p class="library-text">A step-by-step guide for when everything feels new.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>12 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="2">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-book"></i> Book</span>
+      </div>
+      <div class="library-body">
+        <span class="reason"><i class="fa-solid fa-heart"></i>Loved by the community</span>
+        <h3>Mindfulness for Hard Days</h3>
+        <p class="library-author">Lina Barakat</p>
+        <p class="library-text">Short breathing and grounding exercises for anxious moments.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>2 h read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article></div>
+      </section>
+
+      <section class="library">
+        <h2>Explore the library</h2>
+
+        <div class="library-filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="Book"><i class="fa-solid fa-book"></i> <span>Books</span></button>
+          <button class="chip" data-filter="Article"><i class="fa-regular fa-newspaper"></i> <span>Articles</span></button>
+          <button class="chip" data-filter="Guide"><i class="fa-solid fa-map"></i> <span>Guides</span></button>
+          <button class="chip" data-filter="saved"><i class="fa-solid fa-bookmark"></i> <span>Saved</span> <span class="chip-count" id="saved-count">0</span></button>
+        </div>
+
+        <div class="library-grid" id="library-grid">
+    <article class="library-card" data-id="1">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-book"></i> Book</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Living Well With Cancer</h3>
+        <p class="library-author">Dr. Salma Haddad</p>
+        <p class="library-text">Simple daily habits for energy, sleep and calm during treatment.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>3 h read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="2">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-book"></i> Book</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Mindfulness for Hard Days</h3>
+        <p class="library-author">Lina Barakat</p>
+        <p class="library-text">Short breathing and grounding exercises for anxious moments.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>2 h read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="3">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-book"></i> Book</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>The Caregiver's Companion</h3>
+        <p class="library-author">Nadia Khoury</p>
+        <p class="library-text">For the daughters, sisters and friends standing beside someone with cancer.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>3 h read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="4">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-book"></i> Book</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Life After Treatment</h3>
+        <p class="library-author">Rana Saleh</p>
+        <p class="library-text">Finding your rhythm, your body and your confidence again.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>3 h read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="5">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-regular fa-newspaper"></i> Article</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Questions to Ask Your Doctor</h3>
+        <p class="library-author">Ma'aky care team</p>
+        <p class="library-text">A gentle checklist to bring to your next appointment.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>6 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="6">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-regular fa-newspaper"></i> Article</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Managing Fatigue During Chemo</h3>
+        <p class="library-author">Ma'aky care team</p>
+        <p class="library-text">Why treatment makes you so tired, and small ways to cope.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>5 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="7">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-regular fa-newspaper"></i> Article</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Eating Well on Treatment Days</h3>
+        <p class="library-author">Hiba Nasser, nutritionist</p>
+        <p class="library-text">Easy meals and snacks when food tastes different.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>7 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="8">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-regular fa-newspaper"></i> Article</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Talking to Children About Cancer</h3>
+        <p class="library-author">Nadia Khoury</p>
+        <p class="library-text">Honest, gentle words for children of every age.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>8 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="9">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-map"></i> Guide</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Your First Weeks After Diagnosis</h3>
+        <p class="library-author">Ma'aky care team</p>
+        <p class="library-text">A step-by-step guide for when everything feels new.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>12 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="10">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-map"></i> Guide</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Gentle Movement After Surgery</h3>
+        <p class="library-author">Maya Odeh, physiotherapist</p>
+        <p class="library-text">Safe stretches to get your strength back, one day at a time.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>10 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="11">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-regular fa-newspaper"></i> Article</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Calming Anxiety Before Scans</h3>
+        <p class="library-author">Lina Barakat</p>
+        <p class="library-text">For the days of waiting, when your mind will not rest.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>4 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article>
+    <article class="library-card" data-id="12">
+      <div class="library-cover">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="">
+        <span class="type-tag"><i class="fa-solid fa-map"></i> Guide</span>
+      </div>
+      <div class="library-body">
+        
+        <h3>Caring for Your Skin and Hair</h3>
+        <p class="library-author">Hala Saeed, nurse</p>
+        <p class="library-text">Gentle care for dry skin, hair loss and nails during treatment.</p>
+        <div class="library-footer">
+          <span class="time"><i class="fa-regular fa-clock"></i>9 min read</span>
+          <button class="icon-button save-button " title="Save for later" aria-label="Save for later"><i class="fa-regular fa-bookmark"></i></button>
+          <button class="icon-button share-button" title="Share with the community" aria-label="Share with the community"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+      </div>
+    </article></div>
+      </section>
+    </main>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+
+    <!-- the feelings, used for the recommendations -->
+  </body></html>

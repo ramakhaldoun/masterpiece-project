@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - My Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/profile.css">
+  </head>
+  <body data-page="profile" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link ">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link ">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link ">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link active">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link ">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+
+      <div class="section-title">
+        <span class="small-label">Account &amp; settings</span>
+        <h1 id="profile-title">My Profile</h1>
+        <p id="profile-subtitle">Your name, your story and what you choose to share.</p>
+      </div>
+
+      <p class="loading hidden" id="profile-loading">Loading your profile…</p>
+
+      <!-- =====================================================
+           1. THE PROFILE (shown when she already has one)
+           ===================================================== -->
+      <div class="card profile-card hidden" id="profile-view"></div>
+
+      <!-- =====================================================
+           2. THE FORM (create or edit the profile)
+           novalidate = we show our own error messages
+           ===================================================== -->
+      <form class="card profile-card" id="profile-form" novalidate="">
+        <!-- PROFILE PICTURE: the preview circle + buttons to choose or remove a photo -->
+        <div class="photo-field">
+          <div id="photo-preview"><div class="avatar avatar-big">R</div></div>
+          <div>
+            <!-- Clicking this label opens the (hidden) file input below -->
+            <label for="photo-input" class="btn btn-soft btn-small photo-button">
+              <i class="fa-solid fa-camera"></i> <span>Choose a photo</span>
+            </label>
+            <input type="file" id="photo-input" accept="image/*" class="hidden">
+            <button type="button" class="text-link hidden" id="photo-remove">Remove photo</button>
+            <p class="photo-note">Optional. A photo, a flower, anything that feels like you.</p>
+            <p class="error-text" id="error-photo"></p>
+          </div>
+        </div>
+
+        <label for="display-name">What should we call you?</label>
+        <input type="text" id="display-name" placeholder="e.g. Rama" maxlength="30">
+        <p class="error-text" id="error-display-name"></p>
+
+        <label for="city">City</label>
+        <select id="city">
+          <option value="">Prefer not to say</option>
+          <option value="Amman">Amman</option>
+          <option value="Irbid">Irbid</option>
+          <option value="Zarqa">Zarqa</option>
+          <option value="Aqaba">Aqaba</option>
+          <option value="Salt">Salt</option>
+          <option value="Madaba">Madaba</option>
+          <option value="Karak">Karak</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="stage">Where are you on your journey?</label>
+        <select id="stage">
+          <option value="">Prefer not to say</option>
+          <option value="Recently diagnosed">Recently diagnosed</option>
+          <option value="In treatment">In treatment</option>
+          <option value="In recovery">In recovery</option>
+          <option value="In remission">In remission</option>
+          <option value="Supporting someone I love">Supporting someone I love</option>
+        </select>
+
+        <label for="about"><span>A few words about you</span> <span class="optional">(optional)</span></label>
+        <textarea id="about" rows="4" maxlength="300" placeholder="Anything you would like other women to know about you."></textarea>
+
+        <!-- Each checkbox looks like a small round button (see profile.css) -->
+        <label><span>What would you like to do here?</span> <span class="optional">(choose any)</span></label>
+        <div class="interests">
+          <label class="interest"><input type="checkbox" value="Support circles"> <span>Support circles</span></label>
+          <label class="interest"><input type="checkbox" value="Gentle yoga"> <span>Gentle yoga</span></label>
+          <label class="interest"><input type="checkbox" value="Art &amp; creativity"> <span>Art &amp; creativity</span></label>
+          <label class="interest"><input type="checkbox" value="Walks"> <span>Walks</span></label>
+          <label class="interest"><input type="checkbox" value="Reading"> <span>Reading</span></label>
+          <label class="interest"><input type="checkbox" value="Sharing my story"> <span>Sharing my story</span></label>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="is-public" checked="">
+          <span>Let other members of Ma’aky see my profile</span>
+        </label>
+
+        <p class="error-text" id="profile-error"></p>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn btn-purple">Save my profile</button>
+          <!-- "Skip for now" (new members) or "Cancel" (editing) -->
+          <button type="button" class="text-link" id="profile-cancel">Skip for now</button>
+        </div>
+      </form>
+    </main>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+  </body></html>

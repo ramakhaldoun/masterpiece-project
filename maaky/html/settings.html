@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/settings.css">
+  </head>
+  <body data-page="settings" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link ">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link ">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link ">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link ">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link active">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+      <div class="section-title">
+        <span class="small-label">Account &amp; settings</span>
+        <h1>Settings</h1>
+        <p>Language, notifications, privacy and your account, all in one place.</p>
+      </div>
+
+      <div class="settings-list">
+
+        <section class="card settings-card">
+          <div class="settings-head">
+            <div class="card-icon purple"><i class="fa-solid fa-globe"></i></div>
+            <div>
+              <h2>Language</h2>
+              <p>Choose the language of the website.</p>
+            </div>
+          </div>
+          <div class="language-options">
+            <button class="language-option active" data-lang="en">
+              <strong>English</strong>
+              <small>English</small>
+            </button>
+            <button class="language-option" data-lang="ar">
+              <strong>العربية</strong>
+              <small>Arabic</small>
+            </button>
+          </div>
+        </section>
+
+        <section class="card settings-card">
+          <div class="settings-head">
+            <div class="card-icon pink"><i class="fa-solid fa-bell"></i></div>
+            <div>
+              <h2>Notifications</h2>
+              <p>Gentle reminders, only the ones you want.</p>
+            </div>
+          </div>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Daily check-in reminder</strong>
+              <small>A soft reminder to note how you feel today.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="reminders">
+          </label>
+
+          <label class="setting-row sub-row" id="reminder-time-row">
+            <span class="setting-text">
+              <strong>Reminder time</strong>
+            </span>
+            <select class="setting-select" data-setting="reminder_time">
+              <option value="08:00">08:00</option>
+              <option value="12:00">12:00</option>
+              <option value="18:00">18:00</option>
+              <option value="20:00">20:00</option>
+              <option value="22:00">22:00</option>
+            </select>
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Activity reminders</strong>
+              <small>The day before an activity you joined.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="activity_reminders">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>New messages</strong>
+              <small>When someone sends you a private message.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="messages">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Community replies</strong>
+              <small>When someone answers you in a community.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="community_replies">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Weekly reflection email</strong>
+              <small>A short, kind summary of your week every Sunday.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="weekly_email">
+          </label>
+        </section>
+
+        <!-- =====================================================
+             3. PRIVACY
+             ===================================================== -->
+        <section class="card settings-card">
+          <div class="settings-head">
+            <div class="card-icon green"><i class="fa-solid fa-shield-heart"></i></div>
+            <div>
+              <h2>Privacy</h2>
+              <p>You decide what others can see. Always.</p>
+            </div>
+          </div>
+
+          <!-- this one is saved in her profile (it is the same as on the profile page) -->
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Show my profile to members</strong>
+              <small id="public-note">You have no profile yet. <a href="profile.html">Create your profile</a> first.</small>
+            </span>
+            <input type="checkbox" class="switch" id="setting-public" disabled="">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Share stories anonymously</strong>
+              <small>Your stories show as "Community member" unless you change it.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="anonymous_stories">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Count me in "Sisters online"</strong>
+              <small>Only a number is shown, never your name.</small>
+            </span>
+            <input type="checkbox" class="switch" data-setting="show_online">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Who can message me</strong>
+            </span>
+            <select class="setting-select" data-setting="who_can_message">
+              <option value="everyone">All members</option>
+              <option value="communities">Members of my communities</option>
+              <option value="nobody">Nobody</option>
+            </select>
+          </label>
+        </section>
+
+        <!-- =====================================================
+             4. DISPLAY (saved in this browser, used on every page)
+             ===================================================== -->
+        <section class="card settings-card">
+          <div class="settings-head">
+            <div class="card-icon blue"><i class="fa-solid fa-eye"></i></div>
+            <div>
+              <h2>Display</h2>
+              <p>Make the website easier on your eyes.</p>
+            </div>
+          </div>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Larger text</strong>
+              <small>Makes the text and the pages a little bigger.</small>
+            </span>
+            <input type="checkbox" class="switch" data-display="larger_text">
+          </label>
+
+          <label class="setting-row">
+            <span class="setting-text">
+              <strong>Calm mode</strong>
+              <small>Turns off movement and animations, for tired or dizzy days.</small>
+            </span>
+            <input type="checkbox" class="switch" data-display="calm_mode">
+          </label>
+        </section>
+
+        <!-- =====================================================
+             5. ACCOUNT
+             ===================================================== -->
+        <section class="card settings-card">
+          <div class="settings-head">
+            <div class="card-icon gold"><i class="fa-solid fa-user-lock"></i></div>
+            <div>
+              <h2>Account</h2>
+              <p>Your login details.</p>
+            </div>
+          </div>
+
+          <div class="account-info">
+            <div><small>Username</small><strong id="account-username">Rama</strong></div>
+            <div><small>Email</small><strong id="account-email">rama@example.com</strong></div>
+          </div>
+
+          <!-- Change password (novalidate = we show our own error messages) -->
+          <form class="password-form" id="password-form" novalidate="">
+            <h3>Change password</h3>
+
+            <label for="current-password">Current password</label>
+            <input type="password" id="current-password">
+            <p class="error-text" id="error-current-password"></p>
+
+            <label for="new-password">New password</label>
+            <input type="password" id="new-password" placeholder="At least 8 characters, with a number">
+            <p class="error-text" id="error-new-password"></p>
+
+            <label for="repeat-password">Repeat the new password</label>
+            <input type="password" id="repeat-password">
+            <p class="error-text" id="error-repeat-password"></p>
+
+            <button type="submit" class="btn btn-purple">Save new password</button>
+            <span class="password-done hidden" id="password-done"><i class="fa-solid fa-check"></i> <span>Password changed</span></span>
+          </form>
+
+          <div class="account-buttons">
+            <button class="btn btn-soft" id="settings-logout">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Log out</span>
+            </button>
+            <button class="danger-button" id="delete-open">
+              <i class="fa-solid fa-trash-can"></i> <span>Delete my account</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="saved-toast hidden" id="saved-toast">
+      <i class="fa-solid fa-check"></i> <span>Saved</span>
+    </div>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+  </body></html>

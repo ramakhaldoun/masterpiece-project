@@ -1,0 +1,413 @@
+/* =====================================================
+   DAILY NEEDS PAGE CSS
+   The banner and the popups are shared with other pages (base.css, section 10).
+   This file has:
+   1. The banner photo + "Offer an item" button
+   2. The filter chips
+   3. The item cards
+   4. Inside the popups
+   ===================================================== */
+
+
+/* ---------- 1. BANNER ---------- */
+.page-hero-photo {
+  background-image: url('https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&q=80&w=1600');
+  background-position: center 62%;   /* show the middle-lower part of the photo (the gift and the hands) */
+}
+
+.offer-button {
+  margin-top: 24px;
+}
+
+
+/* ---------- 2. FILTER CHIPS ---------- */
+.need-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--border);
+  background-color: white;
+  color: var(--text-gray);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--purple);
+}
+
+/* daily-needs.js adds "active" to the chosen filter */
+.chip.active {
+  background-color: var(--purple);
+  border-color: var(--purple);
+  color: white;
+}
+
+
+/* ---------- 3. ITEM CARDS ---------- */
+
+/* As many columns as fit, each at least 260px wide */
+.need-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* One card: the whole card is a button that opens the popup */
+.need-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  overflow: hidden;          /* the photo follows the round corners */
+  background-color: white;
+  box-shadow: var(--shadow);
+  font-family: inherit;
+  color: var(--text-dark);
+  text-align: start;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.need-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-big);
+}
+
+/* The top of the card: the photo of the item... */
+.need-media {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;         /* fills the box without stretching */
+}
+
+/* ...or, when there is no photo, a soft colored band with a big icon */
+.need-media.no-photo,
+.need-popup-head.no-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.need-media.no-photo i {
+  font-size: 46px;
+  color: var(--purple);
+}
+
+.no-photo.blue  { background: linear-gradient(135deg, #E3E7FC, #F1E4F7); }
+.no-photo.pink  { background: linear-gradient(135deg, #FDE6EA, #F1E4F7); }
+.no-photo.green { background: linear-gradient(135deg, #DDF5EE, #F1E4F7); }
+
+/* The text part of the card */
+.need-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;                   /* all cards in a row get the same height */
+  padding: 18px 22px 22px;
+}
+
+.need-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+/* the same soft colors as the card icons */
+.need-tag.blue  { background-color: #E3E7FC; color: #5A68C9; }
+.need-tag.pink  { background-color: #FDE6EA; color: var(--pink); }
+.need-tag.green { background-color: #DDF5EE; color: var(--green); }
+
+.need-card h3 {
+  font-size: 19px;
+  margin: 12px 0 6px;
+}
+
+.need-card p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* "Amman · 3 available" at the bottom of the card */
+.need-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: auto;          /* pushes it to the bottom of the card */
+  padding-top: 16px;
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+.need-info i {
+  color: var(--purple);
+  margin-inline-end: 4px;
+}
+
+/* "Requested" and "Your offer" labels */
+.need-status {
+  align-self: flex-start;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.need-status.mine {
+  color: var(--purple);
+}
+
+/* her offer is waiting for the admin */
+.need-status.waiting {
+  color: #B7791F;
+}
+
+.empty-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-gray);
+  padding: 40px;
+}
+
+
+/* ---------- 4. INSIDE THE POPUPS ---------- */
+
+/* The top of the item popup: the photo, or the colored band with the big icon */
+.need-popup-head {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.need-popup-head.no-photo {
+  height: 150px;
+}
+
+.need-popup-head i {
+  font-size: 52px;
+  color: var(--purple);
+}
+
+/* "3 photos" on the card's photo */
+.need-media-box {
+  position: relative;        /* so the "3 photos" label can sit on the photo */
+}
+
+.photo-count {
+  position: absolute;
+  bottom: 10px;
+  inset-inline-start: 12px;
+  background-color: rgba(43, 34, 55, 0.65);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+/* The photo gallery at the top of the popup */
+.gallery {
+  position: relative;        /* so the arrows can sit on the big photo */
+}
+
+.gallery-main {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  background-color: var(--lilac-soft);
+}
+
+/* The ‹ › arrows on the big photo */
+.gallery-arrow {
+  position: absolute;
+  top: 160px;                /* half of the big photo's height */
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.gallery-prev { left: 14px; }
+.gallery-next { right: 14px; }
+
+/* "2 / 3" on the big photo */
+.gallery-counter {
+  position: absolute;
+  top: 280px;
+  left: 16px;
+  background-color: rgba(43, 34, 55, 0.65);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+/* The small photos under the big one */
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 12px 36px 0;
+}
+
+.gallery-thumb {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  opacity: 0.6;              /* faded until chosen */
+}
+
+/* daily-needs.js adds "active" to the photo that is shown big */
+.gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--purple);
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 64px;
+  object-fit: cover;
+}
+
+/* ----- The photos in the "Offer an item" form ----- */
+
+/* the tip: "take real photos of the item itself" */
+.photo-tip {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-bottom: 10px;
+}
+
+.photo-tip i {
+  color: var(--purple);
+  margin-inline-end: 4px;
+}
+
+/* the chosen photos + the "Add photo" box, side by side */
+.offer-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.offer-photo-list {
+  display: contents;         /* its photos sit directly in the row above */
+}
+
+/* one chosen photo, with a round ✕ in its corner */
+.offer-thumb {
+  position: relative;
+  width: 96px;
+  height: 72px;
+}
+
+.offer-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.offer-thumb-remove {
+  position: absolute;
+  top: -8px;
+  inset-inline-end: -8px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--text-dark);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* the dashed "+ Add photo" box (a label that opens the file chooser) */
+label.offer-photo-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 96px;
+  height: 72px;
+  margin: 0;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  color: var(--purple);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+label.offer-photo-add:hover {
+  border-color: var(--purple);
+  background-color: var(--lilac-soft);
+}
+
+/* "See more items →" under the cards (the button style .more-button is in base.css) */
+.more-needs {
+  text-align: center;
+  margin-top: 36px;
+}
+
+
+/* The "Ask to borrow" area */
+.request-box {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* After asking: a green "we'll be in touch" message */
+.request-done {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 22px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #DDF5EE;
+  color: #1F6F64;
+}
+
+.request-done i {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.offer-intro {
+  color: var(--text-gray);
+  margin-top: 4px;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--text-gray);
+}

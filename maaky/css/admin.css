@@ -1,0 +1,318 @@
+/* =====================================================
+   ADMIN DASHBOARD CSS (shared styles are in base.css,
+   the sidebar uses the same classes as the members' sidebar)
+   1. Sidebar badges + page titles
+   2. Overview numbers
+   3. Review cards (new stories and items)
+   4. Tables
+   5. Buttons
+   6. Add forms
+   ===================================================== */
+
+
+/* ---------- 1. SIDEBAR BADGES + PAGE TITLES ---------- */
+
+/* the small number next to "Stories" and "Shared items" */
+.count-badge {
+  margin-inline-start: auto;      /* pushes the badge to the end of the link */
+  min-width: 22px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background-color: var(--pink);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.admin-title {
+  margin-bottom: 28px;
+}
+
+.admin-title h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 4px 0 8px;
+}
+
+.admin-title p {
+  color: var(--text-gray);
+  max-width: 640px;
+}
+
+.admin-heading {
+  font-size: 20px;
+  margin: 36px 0 14px;
+}
+
+/* "You are all caught up!" and "No ... yet" */
+.empty-box {
+  padding: 22px;
+  border: 2px dashed var(--border);
+  border-radius: 18px;
+  color: var(--text-gray);
+  text-align: center;
+}
+
+.empty-box i {
+  color: var(--green);
+  margin-inline-end: 6px;
+}
+
+
+/* ---------- 2. OVERVIEW NUMBERS ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.stat-card .card-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.stat-card span {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+
+/* ---------- 3. REVIEW CARDS ---------- */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* photo on the left, text on the right */
+.review-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+/* no hover lift: these cards are full of buttons */
+.review-card:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+.review-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* the item photos: a small grid of 2 columns */
+.review-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.review-photos img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.review-body h3 {
+  font-size: 20px;
+}
+
+.review-info {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin: 2px 0 10px;
+}
+
+.review-quote {
+  font-style: italic;
+}
+
+.review-body details {
+  margin-top: 10px;
+}
+
+.review-body summary {
+  color: var(--purple);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.review-body details p {
+  margin-top: 8px;
+}
+
+.review-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+
+/* ---------- 4. TABLES ---------- */
+
+/* the white box around the table (scrolls sideways on small screens) */
+.admin-table {
+  overflow-x: auto;
+  border-radius: 18px;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.admin-table .empty-box {
+  border: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;      /* no double lines between the cells */
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: start;
+  font-size: 14px;
+  border-bottom: 1px solid var(--lilac-soft);
+}
+
+th {
+  color: var(--text-gray);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* the last cell (the button) stays on the right */
+td:last-child {
+  text-align: end;
+}
+
+.table-photo {
+  display: block;
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.member-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--lilac);
+  color: var(--purple);
+  font-weight: 700;
+}
+
+
+/* ---------- 5. BUTTONS ---------- */
+.admin-button {
+  padding: 8px 16px;
+  border: 1.5px solid;
+  border-radius: 12px;
+  background-color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-button.approve {
+  border-color: var(--green);
+  background-color: var(--green);
+  color: white;
+}
+
+.admin-button.approve:hover {
+  background-color: #23867A;
+}
+
+.admin-button.reject {
+  border-color: #E7B4BC;
+  color: #B3321F;
+}
+
+.admin-button.reject:hover {
+  background-color: #FDECEE;
+}
+
+.admin-button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+
+/* ---------- 6. ADD FORMS ---------- */
+.admin-form {
+  max-width: 760px;
+}
+
+.admin-form:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+.admin-form h2 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.admin-form .btn {
+  margin-top: 12px;
+}
+
+/* two fields side by side */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* base.css styles text inputs; the date input looks the same */
+input[type="date"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+
+/* ---------- SMALL SCREENS ---------- */
+@media (max-width: 700px) {
+  .review-card,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

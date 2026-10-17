@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma'aky - My Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Material Symbols: the thin rounded mood icons (sun, moon, ...) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/moods.css">
+    <link rel="stylesheet" href="../css/journey.css">
+  </head>
+  <body data-page="journey" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link ">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link active">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link ">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link ">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link ">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link ">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+      <div class="section-title">
+        <span class="small-label">My space</span>
+        <h1>My Journey</h1>
+        <p>Your feelings, your body and your treatment days, all in one gentle place.</p>
+      </div>
+
+      <div class="journey-layout">
+
+        <div class="card calendar-card">
+          <div class="calendar-head">
+            <button class="month-button" id="prev-month" aria-label="Previous month">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <h2 id="month-title">October 2026</h2>
+            <button class="month-button" id="next-month" aria-label="Next month">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <p class="month-summary" id="month-summary">0 check-ins</p>
+
+          <div class="calendar-weekdays">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span>
+            <span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"><div class="calendar-blank"></div><div class="calendar-blank"></div><div class="calendar-blank"></div>
+      <button class="calendar-day" data-date="2026-10-01">
+        <span class="day-number">1</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-02">
+        <span class="day-number">2</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-03">
+        <span class="day-number">3</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-04">
+        <span class="day-number">4</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-05">
+        <span class="day-number">5</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-06">
+        <span class="day-number">6</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-07">
+        <span class="day-number">7</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-08">
+        <span class="day-number">8</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-09">
+        <span class="day-number">9</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-10">
+        <span class="day-number">10</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-11">
+        <span class="day-number">11</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-12">
+        <span class="day-number">12</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-13">
+        <span class="day-number">13</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-14">
+        <span class="day-number">14</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day today selected" data-date="2026-10-15">
+        <span class="day-number">15</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-16">
+        <span class="day-number">16</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-17">
+        <span class="day-number">17</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-18">
+        <span class="day-number">18</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-19">
+        <span class="day-number">19</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-20">
+        <span class="day-number">20</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-21">
+        <span class="day-number">21</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-22">
+        <span class="day-number">22</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-23">
+        <span class="day-number">23</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-24">
+        <span class="day-number">24</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-25">
+        <span class="day-number">25</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-26">
+        <span class="day-number">26</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-27">
+        <span class="day-number">27</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-28">
+        <span class="day-number">28</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-29">
+        <span class="day-number">29</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-30">
+        <span class="day-number">30</span>
+        
+        <span class="day-tags"></span>
+      </button>
+      <button class="calendar-day" data-date="2026-10-31">
+        <span class="day-number">31</span>
+        
+        <span class="day-tags"></span>
+      </button></div>
+
+          <div class="calendar-legend">
+            <span><i class="fa-solid fa-syringe"></i> <span>Treatment day</span></span>
+            <span><i class="fa-solid fa-stethoscope"></i> <span>Appointment</span></span>
+          </div>
+        </div>
+
+        <div class="card day-card" id="day-details">
+    <h2>Thursday 15 October</h2>
+    <span class="small-label">Feeling</span>
+    <p class="day-empty">No check-in yet today. <a href="home.html">Check in on the Home page</a></p>
+
+    <span class="small-label">Mark this day</span>
+    <div class="tag-buttons">
+      <button class="tag-button " data-tag="treatment">
+        <i class="fa-solid fa-syringe"></i> Treatment day
+      </button>
+      <button class="tag-button " data-tag="appointment">
+        <i class="fa-solid fa-stethoscope"></i> Appointment
+      </button></div></div>
+      </div>
+
+      <!-- MY NOTES: a short note about her day, and her saved notes -->
+      <div class="card notes-card">
+        <h2>My notes</h2>
+        <p class="notes-intro">Write down anything on your mind. Your notes are private and only you can see them.</p>
+
+        <form class="note-form" action="journey.html">
+          <label for="note-text">Your note</label>
+          <textarea id="note-text" name="note" rows="4" placeholder="Today I feel…" required></textarea>
+
+          <button type="submit" class="btn btn-purple btn-small note-save">
+            <i class="fa-regular fa-floppy-disk"></i> Save note
+          </button>
+        </form>
+
+        <span class="small-label">Earlier notes</span>
+        <ul class="note-list">
+          <li class="note-item">
+            <span class="mood-icon small tired"><span class="material-symbols-rounded">bedtime</span></span>
+            <div>
+              <p class="note-date">Tuesday 13 October · Tired</p>
+              <p class="note-text">Long day at the hospital. I slept most of the afternoon and that is okay.</p>
+            </div>
+          </li>
+          <li class="note-item">
+            <span class="mood-icon small hopeful"><span class="material-symbols-rounded">light_mode</span></span>
+            <div>
+              <p class="note-date">Saturday 10 October · Hopeful</p>
+              <p class="note-text">Went for a short walk with my sister. The air felt good, and I laughed for the first time this week.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+  </body></html>

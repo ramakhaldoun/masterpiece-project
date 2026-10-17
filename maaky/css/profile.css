@@ -1,0 +1,137 @@
+/* PROFILE PAGE CSS (shared styles are in base.css) */
+
+.profile-card {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* No hover lift: these cards hold a form and buttons */
+.profile-card:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+
+/* ---------- 1. THE PROFILE ---------- */
+
+/* Big circle with the first letter, and the name beside it */
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile-top h2 {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.profile-details {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.profile-section {
+  margin-top: 24px;
+}
+
+.profile-section h3 {
+  font-size: 14px;
+  color: var(--purple);
+  margin: 0 0 6px;
+}
+
+.card .profile-about {
+  color: var(--text-dark);
+}
+
+/* The interests as small rounded tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: var(--lilac);
+  color: var(--purple-dark);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+.profile-buttons {
+  margin-top: 28px;
+}
+
+
+/* ---------- 2. THE FORM ---------- */
+
+/* Picture preview on the left, buttons on the right */
+.photo-field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* The "Choose a photo" label looks like a button */
+label.photo-button {
+  display: inline-block;
+  margin: 0 12px 0 0;
+  cursor: pointer;
+}
+
+.photo-note {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-top: 8px;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--text-gray);
+}
+
+/* The interest checkboxes look like round buttons */
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+label.interest {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* :has(:checked) = "this label has a checked checkbox inside it" */
+label.interest:has(input:checked) {
+  border-color: var(--purple);
+  background-color: var(--lilac);
+  color: var(--purple-dark);
+}
+
+label.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.form-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}

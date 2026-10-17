@@ -1,0 +1,267 @@
+/* =====================================================
+   UNDERSTAND YOUR JOURNEY PAGE CSS
+   The banner and the popups are shared with other pages (base.css, section 10).
+   This file has:
+   1. The banner photo
+   2. "Recommended for you"
+   3. The filters
+   4. The item cards
+   5. Inside the popups
+   ===================================================== */
+
+
+/* ---------- 1. BANNER ---------- */
+.page-hero-photo {
+  background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=1600');
+}
+
+
+/* ---------- 2. RECOMMENDED FOR YOU ---------- */
+.recommended {
+  margin-bottom: 56px;
+  padding: 28px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--lilac), #E3E7FC);
+}
+
+.recommended-head {
+  margin-bottom: 20px;
+}
+
+.recommended-head h2,
+.library h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 4px 0 6px;
+}
+
+.recommended-head p {
+  color: var(--text-gray);
+}
+
+.recommended-head p a {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+
+/* ---------- 3. FILTERS ---------- */
+.library-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--border);
+  background-color: white;
+  color: var(--text-gray);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--purple);
+}
+
+/* understand-journey.js adds "active" to the chosen filter */
+.chip.active {
+  background-color: var(--purple);
+  border-color: var(--purple);
+  color: white;
+}
+
+/* the small number on "Saved" */
+.chip-count {
+  min-width: 22px;
+  padding: 0 7px;
+  border-radius: 20px;
+  background-color: var(--lilac);
+  color: var(--purple);
+  font-size: 12px;
+  text-align: center;
+}
+
+.chip.active .chip-count {
+  background-color: white;
+}
+
+
+/* ---------- 4. ITEM CARDS ---------- */
+
+/* As many columns as fit, each at least 250px wide */
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+/* One card: clicking it opens the popup */
+.library-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  overflow: hidden;          /* the cover follows the round corners */
+  background-color: white;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.library-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-big);
+}
+
+/* The cover photo, with the type ("Book") on it */
+.library-cover {
+  position: relative;
+  height: 160px;
+}
+
+.library-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.type-tag {
+  position: absolute;
+  top: 12px;
+  inset-inline-start: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: white;
+  color: var(--purple-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+.library-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 20px 16px;
+}
+
+/* "Because you're in treatment" (only on recommended cards) */
+.reason {
+  align-self: flex-start;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background-color: var(--lilac-soft);
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reason i {
+  margin-inline-end: 4px;
+}
+
+.library-body h3 {
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.library-author {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin: 4px 0 8px;
+}
+
+.library-body p.library-text {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Bottom row: reading time + Save + Share buttons */
+.library-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;          /* pushes it to the bottom of the card */
+  padding-top: 14px;
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+.library-footer .time {
+  flex: 1;                   /* pushes the buttons to the end of the row */
+}
+
+.library-footer .time i {
+  color: var(--purple);
+  margin-inline-end: 4px;
+}
+
+/* the small round Save and Share buttons */
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background-color: white;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: var(--purple);
+}
+
+/* a saved item: filled purple bookmark */
+.icon-button.saved {
+  background-color: var(--purple);
+  border-color: var(--purple);
+  color: white;
+}
+
+.empty-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-gray);
+  padding: 30px;
+}
+
+
+/* ---------- 5. INSIDE THE POPUPS ---------- */
+
+/* the line under the title: author · type · reading time · shares */
+.item-info {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin: 4px 0 16px;
+}
+
+.share-note {
+  color: var(--text-gray);
+  margin-top: 4px;
+}
+
+/* the green "Shared with ..." message */
+.share-done {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background-color: #DDF5EE;
+  color: #1F6F64;
+  font-weight: 600;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--text-gray);
+}

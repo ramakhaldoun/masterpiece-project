@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 470">
+  <!-- Two women holding hands, each lifting a flower toward a smiling sun.
+       Same colors and style as hero-art.svg -->
+
+  <!-- Big soft circle behind them (cut at the bottom, like the first picture) -->
+  <circle cx="300" cy="320" r="220" fill="#F1EAF9" />
+
+  <!-- Little plus signs and dots floating around -->
+  <path d="M96 250h16M104 242v16" stroke="#F29AA8" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M492 268h16M500 260v16" stroke="#B9A6E8" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M206 92h14M213 85v14" stroke="#9ADFCB" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M388 84h14M395 77v14" stroke="#F29AA8" stroke-width="3.5" stroke-linecap="round" />
+  <circle cx="120" cy="330" r="5" fill="#9ADFCB" />
+  <circle cx="486" cy="200" r="5" fill="#F29AA8" />
+  <circle cx="250" cy="150" r="4" fill="#B9A6E8" />
+
+  <!-- Smiling sun with soft rays -->
+  <g stroke="#F7C873" stroke-width="4" stroke-linecap="round">
+    <path d="M300 64v-14" />
+    <path d="M300 156v14" />
+    <path d="M254 110h-14" />
+    <path d="M346 110h14" />
+    <path d="M268 78l-10 -10" />
+    <path d="M332 78l10 -10" />
+    <path d="M268 142l-10 10" />
+    <path d="M332 142l10 10" />
+  </g>
+  <circle cx="300" cy="110" r="34" fill="#FFD58A" />
+  <circle cx="290" cy="104" r="2.8" fill="#2B2237" />
+  <circle cx="310" cy="104" r="2.8" fill="#2B2237" />
+  <path d="M288 117 Q300 129 312 117" stroke="#2B2237" stroke-width="3" fill="none" stroke-linecap="round" />
+  <circle cx="282" cy="116" r="5" fill="#F7A9A0" opacity="0.6" />
+  <circle cx="318" cy="116" r="5" fill="#F7A9A0" opacity="0.6" />
+
+  <!-- Flower stems (from the raised hands) -->
+  <path d="M155 222 C150 200 148 180 150 160" stroke="#5BBFA8" stroke-width="3.5" fill="none" stroke-linecap="round" />
+  <path d="M445 224 C450 202 452 182 450 162" stroke="#5BBFA8" stroke-width="3.5" fill="none" stroke-linecap="round" />
+  <ellipse cx="0" cy="-12" rx="6" ry="12" transform="translate(150 190) rotate(-50)" fill="#9ADFCB" />
+  <ellipse cx="0" cy="-12" rx="6" ry="12" transform="translate(450 192) rotate(50)" fill="#9ADFCB" />
+
+  <!-- Purple flower (left) -->
+  <circle cx="150" cy="138" r="10" fill="#B9A6E8" />
+  <circle cx="162" cy="147" r="10" fill="#B9A6E8" />
+  <circle cx="158" cy="162" r="10" fill="#B9A6E8" />
+  <circle cx="142" cy="162" r="10" fill="#B9A6E8" />
+  <circle cx="138" cy="147" r="10" fill="#B9A6E8" />
+  <circle cx="150" cy="151" r="7" fill="#D4A373" />
+
+  <!-- Peach flower (right) -->
+  <circle cx="450" cy="140" r="10" fill="#F7B6A8" />
+  <circle cx="462" cy="149" r="10" fill="#F7B6A8" />
+  <circle cx="458" cy="164" r="10" fill="#F7B6A8" />
+  <circle cx="442" cy="164" r="10" fill="#F7B6A8" />
+  <circle cx="438" cy="149" r="10" fill="#F7B6A8" />
+  <circle cx="450" cy="153" r="7" fill="#D4A373" />
+
+  <!-- ===== WOMAN ON THE LEFT (pink headscarf, green top) ===== -->
+  <!-- body + white collar -->
+  <path d="M170 362 C170 336 200 324 230 324 C260 324 290 336 290 362 L300 470 L160 470Z" fill="#9ADFCB" />
+  <path d="M212 326 L230 350 L248 326Z" fill="#FFFFFF" />
+  <!-- raised arm (skin, then sleeve, then hand) -->
+  <path d="M190 346 C168 302 160 264 157 234" stroke="#FFD3C4" stroke-width="22" stroke-linecap="round" fill="none" />
+  <path d="M192 348 C184 332 180 320 178 308" stroke="#9ADFCB" stroke-width="28" stroke-linecap="round" fill="none" />
+  <circle cx="156" cy="226" r="12" fill="#FFD3C4" />
+  <!-- arm reaching to the middle -->
+  <path d="M272 352 C288 372 294 388 298 404" stroke="#FFD3C4" stroke-width="22" stroke-linecap="round" fill="none" />
+  <path d="M270 350 C278 358 282 366 285 374" stroke="#9ADFCB" stroke-width="28" stroke-linecap="round" fill="none" />
+  <!-- pink awareness ribbon on her top -->
+  <path d="M0 0 C-9 -11 -9 -24 0 -24 C9 -24 9 -11 0 0 C10 11 14 19 19 28 L10 26 L0 9 L-10 26 L-19 28 C-14 19 -10 11 0 0Z" transform="translate(208 410) scale(0.75)" fill="#F29AA8" stroke="#fff" stroke-width="2" />
+  <!-- neck + face -->
+  <rect x="218" y="292" width="24" height="26" rx="9" fill="#FFC4B0" />
+  <ellipse cx="230" cy="256" rx="44" ry="50" fill="#FFD3C4" />
+  <circle cx="206" cy="278" r="7" fill="#F7A9A0" opacity="0.55" />
+  <circle cx="254" cy="278" r="7" fill="#F7A9A0" opacity="0.55" />
+  <path d="M210 258 q8 7 16 0 M234 258 q8 7 16 0" stroke="#2B2237" stroke-width="3" fill="none" stroke-linecap="round" />
+  <path d="M219 281 q11 12 22 0" stroke="#2B2237" stroke-width="3" fill="none" stroke-linecap="round" />
+  <!-- headscarf with white dots and the side drape -->
+  <path d="M184 256 C178 198 202 182 230 182 C260 182 282 198 276 256 C264 232 246 226 230 226 C214 226 196 234 184 256Z" fill="#F29AA8" />
+  <circle cx="210" cy="204" r="3.2" fill="#fff" opacity="0.75" />
+  <circle cx="230" cy="198" r="3.2" fill="#fff" opacity="0.75" />
+  <circle cx="252" cy="205" r="3.2" fill="#fff" opacity="0.75" />
+  <circle cx="198" cy="226" r="3.2" fill="#fff" opacity="0.75" />
+  <circle cx="262" cy="226" r="3.2" fill="#fff" opacity="0.75" />
+  <path d="M186 248 C172 270 176 300 192 316 C200 294 196 268 186 248Z" fill="#E9808F" />
+
+  <!-- ===== WOMAN ON THE RIGHT (dark hair with a bun, blue top) ===== -->
+  <!-- hair behind the head -->
+  <ellipse cx="370" cy="254" rx="54" ry="60" fill="#6E4382" />
+  <circle cx="370" cy="188" r="20" fill="#6E4382" />
+  <!-- body + white collar -->
+  <path d="M310 364 C310 338 340 326 370 326 C400 326 430 338 430 364 L440 470 L300 470Z" fill="#B9C7F3" />
+  <path d="M352 328 L370 352 L388 328Z" fill="#FFFFFF" />
+  <!-- raised arm -->
+  <path d="M410 348 C432 304 440 266 443 236" stroke="#FFD3C4" stroke-width="22" stroke-linecap="round" fill="none" />
+  <path d="M408 350 C416 334 420 322 422 310" stroke="#B9C7F3" stroke-width="28" stroke-linecap="round" fill="none" />
+  <circle cx="444" cy="228" r="12" fill="#FFD3C4" />
+  <!-- arm reaching to the middle -->
+  <path d="M328 354 C312 374 306 390 302 404" stroke="#FFD3C4" stroke-width="22" stroke-linecap="round" fill="none" />
+  <path d="M330 352 C322 360 318 368 315 376" stroke="#B9C7F3" stroke-width="28" stroke-linecap="round" fill="none" />
+  <!-- neck + face -->
+  <rect x="358" y="294" width="24" height="26" rx="9" fill="#FFC4B0" />
+  <ellipse cx="370" cy="258" rx="44" ry="50" fill="#FFD3C4" />
+  <circle cx="346" cy="280" r="7" fill="#F7A9A0" opacity="0.55" />
+  <circle cx="394" cy="280" r="7" fill="#F7A9A0" opacity="0.55" />
+  <path d="M350 260 q8 7 16 0 M374 260 q8 7 16 0" stroke="#2B2237" stroke-width="3" fill="none" stroke-linecap="round" />
+  <path d="M359 283 q11 12 22 0" stroke="#2B2237" stroke-width="3" fill="none" stroke-linecap="round" />
+  <!-- hair on top of the forehead -->
+  <path d="M324 252 C322 210 344 200 370 200 C398 200 420 212 416 252 C404 228 386 222 370 224 C352 224 334 232 324 252Z" fill="#6E4382" />
+
+  <!-- ===== THEIR HANDS, HELD TOGETHER, and a little heart above ===== -->
+  <circle cx="300" cy="406" r="15" fill="#FFD3C4" />
+  <path d="M0 8 C-22 -8 -12 -26 0 -14 C12 -26 22 -8 0 8Z" transform="translate(300 354) scale(1.1)" fill="#F29AA8" />
+</svg>

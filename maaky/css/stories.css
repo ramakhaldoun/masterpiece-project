@@ -1,0 +1,193 @@
+/* =====================================================
+   STORIES PAGE CSS
+   1. Title + introduction
+   2. Story cards with photos
+   3. The full story (stories.html?story=1)
+   ===================================================== */
+
+
+/* ---------- 1. TITLE + INTRODUCTION ---------- */
+.stories-title {
+  max-width: 900px;
+  margin: 0 auto 44px;
+}
+
+.stories-title h1 {
+  text-align: center;
+  font-size: 46px;
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.stories-title p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-gray);
+}
+
+.stories-title strong {
+  color: var(--purple-dark);
+}
+
+
+/* ---------- 2. STORY CARDS (the card itself is in base.css, section 6) ---------- */
+
+/* As many columns as fit, each at least 300px wide */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+
+/* ---------- SHARE YOUR STORY ---------- */
+
+/* The "Share your story" button under the introduction */
+.share-row {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.share-intro {
+  color: var(--text-gray);
+  margin: 6px 0 4px;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--text-gray);
+}
+
+/* The photo preview + buttons */
+.share-photo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.share-photo-preview {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* The "Choose a photo" label looks like a button */
+label.share-photo-button {
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* A checkbox with its text on one line */
+label.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+label.check-row input {
+  margin-top: 5px;
+}
+
+
+/* "Read more stories →" under the cards (the button style .more-button is in base.css) */
+.more-stories {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+/* ---------- 3. THE FULL STORY ---------- */
+
+/* The photo at the top of the full story */
+.article-photo {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 28px;
+}
+
+.article {
+  max-width: 740px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: var(--shadow);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-gray);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--purple);
+}
+
+.article h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 6px 0 8px;
+}
+
+.article-info {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* The short quote at the top, with a line on its left */
+.article-quote {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--purple-dark);
+  border-left: 4px solid var(--lilac);
+  padding-left: 16px;
+  margin-bottom: 28px;
+}
+
+.article-text {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #3A3345;
+  margin-bottom: 20px;
+}
+
+.article-end {
+  margin-top: 36px;
+  padding: 24px;
+  background-color: var(--lilac-soft);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.article-end .btn {
+  margin: 4px;               /* a little space between the two buttons */
+}
+
+.article-end p {
+  color: var(--text-gray);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  .stories-title h1 { font-size: 32px; }
+  .stories-title p { font-size: 16px; }
+  .photo-story-card img { height: 220px; }
+  .photo-story-body { padding: 24px; }
+  .photo-story-body h3 { font-size: 21px; }
+  .article { padding: 28px 22px; }
+  .article h1 { font-size: 30px; }
+  .article-photo { height: 220px; }
+}

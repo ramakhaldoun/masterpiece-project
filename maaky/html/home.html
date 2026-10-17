@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ma'aky - Home</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Material Symbols: the thin rounded mood icons (sun, moon, ...) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/moods.css">
+    <link rel="stylesheet" href="../css/home.css">
+  </head>
+
+  <body data-page="home" class="app">
+
+    <div id="sidebar">
+    <aside class="sidebar" id="sidebar-box">
+      <div class="sidebar-top">
+        <a href="home.html" class="brand">
+          <div class="brand-icon"><img src="../images/logo.svg" alt="" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Ma’aky</span>
+            <span class="brand-tagline">You're not alone.</span>
+          </div>
+        </a>
+        <!-- only visible on small screens -->
+        <button class="menu-button" id="menu-button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-content">
+
+        <a href="profile.html" class="sidebar-profile" id="sidebar-profile">
+    <div class="avatar ">R</div>
+    <span>
+      <strong>Rama</strong>
+      <small>Create your profile</small>
+    </span></a>
+
+        <nav class="sidebar-nav"><p class="sidebar-heading">Overview</p>
+        <a href="home.html" class="sidebar-link active">
+          <i class="fa-solid fa-house"></i> Home
+        </a><p class="sidebar-heading">My space</p>
+        <a href="journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-heart"></i> My Journey
+        </a>
+        <a href="messages.html" class="sidebar-link ">
+          <i class="fa-regular fa-message"></i> Messages
+        </a><p class="sidebar-heading">Support &amp; community</p>
+        <a href="communities.html" class="sidebar-link ">
+          <i class="fa-solid fa-people-group"></i> Communities
+        </a>
+        <a href="activities.html" class="sidebar-link ">
+          <i class="fa-regular fa-calendar-check"></i> Activities &amp; Events
+        </a>
+        <a href="stories.html" class="sidebar-link ">
+          <i class="fa-regular fa-bookmark"></i> Survivor Stories
+        </a>
+        <a href="resources.html" class="sidebar-link ">
+          <i class="fa-solid fa-location-dot"></i> Support Near You
+        </a><p class="sidebar-heading">Essentials &amp; care</p>
+        <a href="daily-needs.html" class="sidebar-link ">
+          <i class="fa-solid fa-box-open"></i> Your Daily Needs
+        </a>
+        <a href="understand-journey.html" class="sidebar-link ">
+          <i class="fa-solid fa-book-open"></i> Understand Your Journey
+        </a><p class="sidebar-heading">Account &amp; settings</p>
+        <a href="profile.html" class="sidebar-link ">
+          <i class="fa-regular fa-user"></i> My Profile
+        </a>
+        <a href="settings.html" class="sidebar-link ">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a></nav>
+
+        <a href="donate.html" class="btn btn-soft btn-small sidebar-donate">
+          <i class="fa-solid fa-hand-holding-heart"></i> Support Ma’aky
+        </a>
+
+        <a href="landing.html" class="text-button sidebar-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+        </a>
+      </div>
+    </aside></div>
+
+    <main class="page">
+      <!-- =========================================
+           1. WELCOME SECTION
+      ========================================== -->
+      <!-- welcome-area: as tall as the screen, and puts the card in its vertical middle -->
+      <div class="welcome-area">
+      <section class="welcome">
+        <!-- Search Bar -->
+        <form class="search" id="search-form">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="search" id="search-input" placeholder="Search activities, stories, books, daily needs…" autocomplete="off">
+
+          <div class="search-results hidden" id="search-results"></div>
+        </form>
+
+        <!-- Two columns: welcome message (left) + mood check-in (right) -->
+        <div class="welcome-columns">
+
+        <!-- LEFT: Welcome Message -->
+        <div class="welcome-top">
+          <span class="badge">
+            <i class="fa-solid fa-ribbon"></i>
+            <span>Your safe space</span>
+          </span>
+
+          <h1 id="greeting">Good afternoon, Rama</h1>
+
+          <!-- always in the OTHER language -->
+          <p class="arabic-text">لستِ وحدكِ، نحن معكِ</p>
+
+          <p class="welcome-text">
+            Take today gently, at your own pace. Everything you need is right
+            here in your supportive community.
+          </p>
+
+          <!-- Breathing Exercise Button -->
+          <div class="welcome-buttons">
+            <button type="button" class="btn btn-soft btn-big" id="breathe-open">
+              <i class="fa-regular fa-heart"></i>
+              <span>One breath at a time</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT: Mood check-in -->
+        <div class="mood-panel">
+          <span class="small-label">Safe space</span>
+          <h2>How are you feeling today?</h2>
+
+          <div class="mood-grid" id="mood-grid">
+      <button class="mood-button" data-mood="hopeful">
+        <span class="mood-icon hopeful "><span class="material-symbols-rounded">light_mode</span></span>
+        <span class="mood-name">Hopeful</span>
+      </button>
+      <button class="mood-button" data-mood="okay">
+        <span class="mood-icon okay "><span class="material-symbols-rounded">sentiment_satisfied</span></span>
+        <span class="mood-name">Okay</span>
+      </button>
+      <button class="mood-button" data-mood="anxious">
+        <span class="mood-icon anxious "><span class="material-symbols-rounded">air</span></span>
+        <span class="mood-name">Anxious</span>
+      </button>
+      <button class="mood-button" data-mood="tired">
+        <span class="mood-icon tired "><span class="material-symbols-rounded">bedtime</span></span>
+        <span class="mood-name">Tired</span>
+      </button>
+      <button class="mood-button" data-mood="overwhelmed">
+        <span class="mood-icon overwhelmed "><span class="material-symbols-rounded">cyclone</span></span>
+        <span class="mood-name">Overwhelmed</span>
+      </button>
+      <button class="mood-button" data-mood="sad">
+        <span class="mood-icon sad "><span class="material-symbols-rounded">water_drop</span></span>
+        <span class="mood-name">Sad</span>
+      </button></div>
+
+          <!-- Nour's Response -->
+          <div class="nour-box">
+            <div class="nour-avatar">N</div>
+
+            <div class="nour-text">
+              <p class="small-label">Nour says</p>
+
+              <p id="nour-answer">Pick how you feel and I will answer you.</p>
+
+              <p class="nour-help hidden" id="nour-help">
+                <span>If it feels heavy, the helpline is open 24/7.</span>
+                <a href="resources.html">Reach out to someone now</a>
+              </p>
+            </div>
+
+            <a href="messages.html" class="btn btn-purple btn-small">Talk to Nour</a>
+          </div>
+        </div>
+
+        </div>
+        <!-- end of welcome-columns -->
+
+        <!-- Welcome Information Tiles -->
+        <div class="welcome-tiles">
+          <!-- Gentle Thought -->
+          <div class="welcome-tile">
+            <div class="card-icon pink">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+
+            <div>
+              <h3>Today's gentle thought</h3>
+
+              <p id="gentle-thought">“You don't have to be okay today to be worthy of care.”</p>
+            </div>
+          </div>
+
+          <!-- Next Gathering -->
+          <div class="welcome-tile">
+            <div class="card-icon green">
+              <i class="fa-regular fa-calendar-check"></i>
+            </div>
+
+            <div>
+              <h3>Next support gathering</h3>
+
+              <p id="next-gathering">Gentle Yoga Morning • Sat 17 Oct, 10:00 AM</p>
+            </div>
+          </div>
+
+          <!-- Community Activity -->
+          <div class="welcome-tile">
+            <div class="card-icon purple">
+              <i class="fa-solid fa-user-group"></i>
+            </div>
+
+            <div>
+              <h3>Women online in Jordan</h3>
+
+              <p>18 women sharing warmth today in Amman &amp; Irbid</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      <!-- end of welcome-area -->
+
+      <!-- =========================================
+           2. YOUR CHECK-IN (the mood buttons are at the top of the page)
+      ========================================== -->
+      <section class="home-section">
+        <div class="section-title">
+          <span class="small-label">Your check-in</span>
+
+          <h2>Your days, gently noted</h2>
+
+          <p>There's no right answer. This moment is yours.</p>
+        </div>
+
+        <!-- Optional Mood Details -->
+        <div class="checkin-more hidden" id="checkin-more">
+          <h3>
+            <span>Want to add more?</span>
+            <span class="optional">(optional)</span>
+          </h3>
+
+          <label for="mood-note">A note for today</label>
+
+          <textarea id="mood-note" rows="3" maxlength="500" placeholder="e.g. Chemo day 3, a good talk with my sister…"></textarea>
+
+          <p class="checkin-label">How is your body today?</p>
+
+          <div class="body-questions" id="body-questions">
+      <div class="body-question" data-key="energy">
+        <span class="body-label">Energy</span>
+        <div class="scale">
+          <small>Very low</small>
+          <button type="button" class="scale-dot" data-value="1">1</button><button type="button" class="scale-dot" data-value="2">2</button><button type="button" class="scale-dot" data-value="3">3</button><button type="button" class="scale-dot" data-value="4">4</button><button type="button" class="scale-dot" data-value="5">5</button>
+          <small>Full</small>
+        </div>
+      </div>
+      <div class="body-question" data-key="pain">
+        <span class="body-label">Pain</span>
+        <div class="scale">
+          <small>None</small>
+          <button type="button" class="scale-dot" data-value="1">1</button><button type="button" class="scale-dot" data-value="2">2</button><button type="button" class="scale-dot" data-value="3">3</button><button type="button" class="scale-dot" data-value="4">4</button><button type="button" class="scale-dot" data-value="5">5</button>
+          <small>Strong</small>
+        </div>
+      </div>
+      <div class="body-question" data-key="sleep">
+        <span class="body-label">Sleep</span>
+        <div class="scale">
+          <small>Poor</small>
+          <button type="button" class="scale-dot" data-value="1">1</button><button type="button" class="scale-dot" data-value="2">2</button><button type="button" class="scale-dot" data-value="3">3</button><button type="button" class="scale-dot" data-value="4">4</button><button type="button" class="scale-dot" data-value="5">5</button>
+          <small>Great</small>
+        </div>
+      </div>
+      <div class="body-question" data-key="appetite">
+        <span class="body-label">Appetite</span>
+        <div class="scale">
+          <small>Poor</small>
+          <button type="button" class="scale-dot" data-value="1">1</button><button type="button" class="scale-dot" data-value="2">2</button><button type="button" class="scale-dot" data-value="3">3</button><button type="button" class="scale-dot" data-value="4">4</button><button type="button" class="scale-dot" data-value="5">5</button>
+          <small>Good</small>
+        </div>
+      </div></div>
+
+          <div class="checkin-save">
+            <button type="button" class="btn btn-purple" id="save-checkin">
+              <span>Save</span>
+            </button>
+
+            <span class="saved-text hidden" id="saved-text">
+              <i class="fa-solid fa-check"></i>
+              <span>Saved</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Weekly Mood History -->
+        <div class="mood-week">
+          <div class="mood-week-head">
+            <h3>Your week of feelings</h3>
+
+            <p id="week-summary">Pick a feeling to start your week.</p>
+          </div>
+
+          <div class="week-days" id="week-days">
+      <div class="week-day ">
+        <span class="mood-icon empty "></span>
+        <strong>Fri</strong>
+        <small>—</small>
+      </div>
+      <div class="week-day ">
+        <span class="mood-icon empty "></span>
+        <strong>Sat</strong>
+        <small>—</small>
+      </div>
+      <div class="week-day ">
+        <span class="mood-icon empty "></span>
+        <strong>Sun</strong>
+        <small>—</small>
+      </div>
+      <div class="week-day ">
+        <span class="mood-icon empty "></span>
+        <strong>Mon</strong>
+        <small>—</small>
+      </div>
+      <div class="week-day ">
+        <span class="mood-icon empty "></span>
+        <strong>Tue</strong>
+        <small>—</small>
+      </div>
+      <div class="week-day ">
+        <span class="mood-icon empty "></span>
+        <strong>Wed</strong>
+        <small>—</small>
+      </div>
+      <div class="week-day today">
+        <span class="mood-icon empty "></span>
+        <strong>Today</strong>
+        <small>—</small>
+      </div></div>
+
+          <p class="see-all">
+            <a class="card-link" href="journey.html">
+              <span>See your whole journey</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </p>
+        </div>
+
+        <!-- Community Mood Summary -->
+        <div class="community-pulse">
+          <div class="card-icon purple">
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+          <div class="pulse-text">
+            <h3>Today in Ma’aky</h3>
+
+            <p id="pulse-summary">27 women checked in today. You are not alone 💜</p>
+
+            <div class="pulse-moods" id="pulse-moods"><div class="pulse-chip tired"><span class="material-symbols-rounded">bedtime</span> Tired <span class="percent">30%</span></div><div class="pulse-chip okay"><span class="material-symbols-rounded">sentiment_satisfied</span> Okay <span class="percent">22%</span></div><div class="pulse-chip hopeful"><span class="material-symbols-rounded">light_mode</span> Hopeful <span class="percent">19%</span></div></div>
+
+            <small>Only totals are shown, never names.</small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- BREATHING EXERCISE POPUP (opened by js/breathing.js) -->
+    <dialog class="breathe" id="breathe-popup">
+      <h2>One breath at a time</h2>
+
+      <p class="breathe-text">
+        Follow the circle. There is nothing to do but breathe.
+      </p>
+
+      <div class="breathe-area">
+        <div class="breathe-circle" id="breathe-circle"></div>
+      </div>
+
+      <p class="breathe-word" id="breathe-word">Breathe in</p>
+
+      <button type="button" class="btn btn-purple" id="breathe-close">Done</button>
+    </dialog>
+
+    <div id="footer">
+    <footer class="footer">
+      <p>Ma’aky offers community and emotional support. It is not a substitute for medical advice or treatment.</p>
+      <p>© 2026 Ma'aky (معكِ). All rights reserved.</p>
+    </footer></div>
+
+    <script src="../js/breathing.js"></script>
+  </body></html>
